@@ -9,6 +9,12 @@ import SwiftUI
 
 struct MainScreen: View {
     @StateObject private var viewModel = TransactionViewModel()
+
+    func deleteTransaction(offsets : IndexSet){
+        offsets.forEach{ index in
+            viewModel.deleteTransaction(index: index)
+        }
+    }
     
     var body: some View {
         VStack{
@@ -32,14 +38,19 @@ struct MainScreen: View {
                 viewModel.getAllTransaction()
             }
             
-            List(viewModel.transactions, id: \.id){ trans in
-                VStack{
-                    Text(trans.name)
-                    Text(String(trans.amount))
-                }
+            List{
+                ForEach(viewModel.transactions, id: \.id){ trans in
+                    VStack{
+                        Text(trans.name)
+                        Text(String(trans.amount))
+                    }
+                }.onDelete(perform: deleteTransaction)
+                
             }
                 
             
+        }.onAppear{
+            viewModel.getAllTransaction()
         }
     }
 }

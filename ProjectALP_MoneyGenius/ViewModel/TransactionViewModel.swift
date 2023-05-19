@@ -18,6 +18,10 @@ class TransactionViewModel : ObservableObject{
         transactions = coreDataManager.getAllTransaction().map(TransactionStruct.init)
     }
     
+    func deleteTransaction(index : Int){
+        coreDataManager.deleteTrancaction(trans: transactions[index].transaction )
+    }
+    
     func insert(){
         let transaction = Transaction(context: coreDataManager.viewContext)
         transaction.id = UUID()

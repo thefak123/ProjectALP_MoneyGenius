@@ -41,4 +41,21 @@ class CoreDataManager{
         }
         
     }
+    
+    func getTransactionById(id : UUID) -> Transaction?{
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Transaction")
+        let request : NSFetchRequest<Transaction> = Transaction.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %d", id as NSUUID)
+        
+         
+
+          
+        guard let items = try? viewContext.fetch(request) else { return nil }
+        return items.first
+           
+    }
+    
+    func deleteTrancaction(trans : Transaction){
+        viewContext.delete(trans)
+    }
 }
