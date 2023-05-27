@@ -10,16 +10,25 @@ import CoreData
 
 struct TransactionStruct{
     var transaction : Transaction
-    
     var id : NSManagedObjectID {
         return transaction.objectID
-    }
-    
-    var name : String {
-        return transaction.name!
     }
     
     var amount : Int64 {
         return transaction.amount
     }
+    
+    var categoryName : String {
+        return transaction.category?.name ?? ""
+    }
+    
+    var categoryType : String {
+        return transaction.category?.type ?? ""
+    }
+    
+    var note : String {
+        return transaction.note ?? ""
+    }
+    
+    
 }

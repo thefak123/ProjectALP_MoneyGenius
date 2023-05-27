@@ -9,14 +9,21 @@ import Foundation
 import CoreData
 
 class TransactionViewModel : ObservableObject{
-    var name : String = ""
-    var amount : Int = 0
+    var amount : String = ""
+    @Published var category : CategoryStruct? = nil
     @Published var transactions : [TransactionStruct] = []
+    @Published var categories : [CategoryStruct] = []
+    var note : String = ""
     let coreDataManager = CoreDataManager.shared
+    var type : String = ""
     
     func getAllTransaction() {
         transactions = coreDataManager.getAllTransaction().map(TransactionStruct.init)
+        print(transactions[transactions.count - 1].transaction)
+        
     }
+    
+    
     
     func deleteTransaction(index : Int){
         let trans = coreDataManager.getTransactionById(id: transactions[index].id)
@@ -28,15 +35,25 @@ class TransactionViewModel : ObservableObject{
         return coreDataManager.getSumOfTransaction()
     }
     
+    func emptyAllVariables(){
+        self.note = ""
+        self.type = ""
+        self.amount = ""
+        self.category = nil
+    }
+    
     func getSumOfTransactionByCatId(){
 //        coreDataManager.getSumOfTransactionByCatId()
     }
     
-    func insert(){
-        let transaction = Transaction(context: coreDataManager.viewContext)
-        transaction.amount = Int64(self.amount)
-        transaction.name = self.name
-        coreDataManager.save()
+    func getAllCategories(type : String){
+        categories = coreDataManager.getAllCategories(type: type).map(CategoryStruct.init)
+    }
+    
+    func addTransaction(){
+        if category != nil{
+            coreDataManager.addTransaction(type: type, amount: Int64(amount) ?? 0, note: note, category_name: category?.name ?? "", category_type: category?.type ?? "")
+        }
     }
     
     func sumAllTransaction(){

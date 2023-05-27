@@ -10,13 +10,13 @@ import SwiftUI
 struct TextInputComponent: View {
     var label : String
     var placeholder : String
-    @Binding var maxBudget : String
+    @Binding var value : String
     
     
     var body: some View {
         VStack(alignment: .leading){
             Text(label)
-            TextField(placeholder, text: $maxBudget).textFieldStyle(.roundedBorder).padding(.bottom, 10)
+            TextField(placeholder, text: $value).textFieldStyle(.roundedBorder).padding(.bottom, 10)
         }
     }
 }
@@ -25,6 +25,6 @@ struct TextInputComponent_Previews:
 
     PreviewProvider {
     static var previews: some View {
-        TextInputComponent(label: "Income budget", placeholder: "Enter income budget", maxBudget: .constant("true"))
+        TextInputComponent(label: "Income budget", placeholder: "Enter income budget", value: .constant("true"))
     }
 }

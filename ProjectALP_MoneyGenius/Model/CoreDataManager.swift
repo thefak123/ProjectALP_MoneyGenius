@@ -30,12 +30,14 @@ class CoreDataManager{
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
         let allIncomeCategories = ["Main job", "Investment", "Side hustle", "Others"]
         let allExpensesCategories = ["Groceries", "Food or drink", "Job Expenses", "Utillities", "Entertaiment", "Insurance", "Others"]
-        for category in allIncomeCategories {
-            
-            let count = checkIfCategoryExist(request: request, categoryName: category)
+        let count = checkIfCategoryExist(request: request)
+        if count == 0{
+            for category in allIncomeCategories {
                 
-            if(count == 0){
-            // no matching object
+                
+                
+                
+                // no matching object
                 let newCategory = Category(context: viewContext)
                 newCategory.name = category
                 newCategory.type = "income"
@@ -44,17 +46,18 @@ class CoreDataManager{
                 }catch{
                     print("There is some error : \(error)")
                 }
+                
+                
+                
             }
-                
-             
-        }
-        
-        for category in allExpensesCategories {
             
-            let count = checkIfCategoryExist(request: request, categoryName: category)
+            
+            
+            for category in allExpensesCategories {
                 
-            if(count == 0){
-            // no matching object
+                
+                
+                // no matching object
                 let newCategory = Category(context: viewContext)
                 newCategory.name = category
                 newCategory.type = "expense"
@@ -63,17 +66,16 @@ class CoreDataManager{
                 }catch{
                     print("There is some error : \(error)")
                 }
-            }
                 
-             
+                
+                
+            }
         }
         
     }
     
-    func checkIfCategoryExist(request : NSFetchRequest<any NSFetchRequestResult>, categoryName : String) -> Int{
-        let predicate = NSPredicate(format: "name == %@", categoryName)
-        request.predicate = predicate
-        request.fetchLimit = 1
+    func checkIfCategoryExist(request : NSFetchRequest<any NSFetchRequestResult>) -> Int{
+        
         var count = 0
         do{
             count = try viewContext.count(for: request)
@@ -113,8 +115,10 @@ class CoreDataManager{
         }
     }
     
-    func getAllCategories() -> [Category]{
+    func getAllCategories(type : String) -> [Category]{
         let request : NSFetchRequest<Category> = Category.fetchRequest()
+        request.predicate = NSPredicate(format: "type == %@", type)
+
         
         do{
             let result = try viewContext.fetch(request)
@@ -128,6 +132,7 @@ class CoreDataManager{
     func getAllExpensesCategories() -> [Category] {
         let request : NSFetchRequest<Category> = Category.fetchRequest()
         request.predicate = NSPredicate(format: "type == %@", "expense")
+
         do{
             let result = try viewContext.fetch(request)
             return result
@@ -249,15 +254,38 @@ class CoreDataManager{
         }
         return 0
     }
-    func save(){
-        do{
-            try viewContext.save()
-        } catch{
-            viewContext.rollback()
-            print(error.localizedDescription)
-        }
+    func addTransaction(type : String, amount : Int64, note : String, category_name : String, category_type : String){
+        let transaction = Transaction(context: viewContext)
+        transaction.type = type
+        transaction.amount = amount
+        transaction.note = note
+        let category = Category(context: viewContext)
+        category.name = category_name
+        category.type = category_type
+        transaction.category = category
+       
+        try! viewContext.save()
+            print("Added")
+        
         
     }
+    
+//    func removeAllTransaction(){
+//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Transaction")
+//        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//        do{
+//            let results = try viewContext.fetch(fetchRequest)
+//            for object in results {
+//                print(object)
+//                guard let objectData = object as? NSManagedObject else {continue}
+//                viewContext.delete(objectData)
+//            }
+//            try viewContext.save()
+//        }catch{
+//            print("Error : \(error)")
+//        }
+//
+//    }
     
     func getTransactionById(id : NSManagedObjectID) -> Transaction?{
         

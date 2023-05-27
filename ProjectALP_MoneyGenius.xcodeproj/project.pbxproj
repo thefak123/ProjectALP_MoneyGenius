@@ -15,10 +15,10 @@
 		0496DA342A1E098600F3CF2B /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */; };
 		0496DA362A1E0AA000F3CF2B /* AddBudgetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA352A1E0AA000F3CF2B /* AddBudgetScreen.swift */; };
 		0496DA382A1E303000F3CF2B /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA372A1E303000F3CF2B /* BudgetViewModel.swift */; };
-		0496DA3A2A1E32E500F3CF2B /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA392A1E32E500F3CF2B /* MainScreenViewModel.swift */; };
 		0496DA3C2A1E4B1300F3CF2B /* CategoryStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA3B2A1E4B1300F3CF2B /* CategoryStruct.swift */; };
 		0496DA3E2A1F058A00F3CF2B /* BudgetStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA3D2A1F058A00F3CF2B /* BudgetStruct.swift */; };
 		0496DA422A2060A200F3CF2B /* BudgetInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA412A2060A200F3CF2B /* BudgetInfoStruct.swift */; };
+		04B24F992A218FC50031D865 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24F982A218FC50031D865 /* MainViewModel.swift */; };
 		04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512902A163CD400CC75F9 /* CoreDataTutor.swift */; };
 		04C512932A163D2F00CC75F9 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512922A163D2F00CC75F9 /* HomeScreen.swift */; };
 		04C5129D2A163FC200CC75F9 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C512962A163FC200CC75F9 /* Inter-Black.ttf */; };
@@ -53,10 +53,10 @@
 		0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		0496DA352A1E0AA000F3CF2B /* AddBudgetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetScreen.swift; sourceTree = "<group>"; };
 		0496DA372A1E303000F3CF2B /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
-		0496DA392A1E32E500F3CF2B /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		0496DA3B2A1E4B1300F3CF2B /* CategoryStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStruct.swift; sourceTree = "<group>"; };
 		0496DA3D2A1F058A00F3CF2B /* BudgetStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetStruct.swift; sourceTree = "<group>"; };
 		0496DA412A2060A200F3CF2B /* BudgetInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetInfoStruct.swift; sourceTree = "<group>"; };
+		04B24F982A218FC50031D865 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		04C512902A163CD400CC75F9 /* CoreDataTutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTutor.swift; sourceTree = "<group>"; };
 		04C512922A163D2F00CC75F9 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		04C512962A163FC200CC75F9 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 			children = (
 				04C512B22A16588900CC75F9 /* TransactionViewModel.swift */,
 				0496DA372A1E303000F3CF2B /* BudgetViewModel.swift */,
-				0496DA392A1E32E500F3CF2B /* MainScreenViewModel.swift */,
+				04B24F982A218FC50031D865 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -304,11 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C512B62A1673BB00CC75F9 /* Transaction.swift in Sources */,
-				0496DA3A2A1E32E500F3CF2B /* MainScreenViewModel.swift in Sources */,
 				04C512B32A16588900CC75F9 /* TransactionViewModel.swift in Sources */,
 				0496DA422A2060A200F3CF2B /* BudgetInfoStruct.swift in Sources */,
 				0496DA382A1E303000F3CF2B /* BudgetViewModel.swift in Sources */,
 				0496DA322A1DA0EC00F3CF2B /* ProgressBarComponent.swift in Sources */,
+				04B24F992A218FC50031D865 /* MainViewModel.swift in Sources */,
 				0496DA3C2A1E4B1300F3CF2B /* CategoryStruct.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
 				04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */,
