@@ -7,6 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04586E302A1C579500B228F8 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E2F2A1C579500B228F8 /* CircleImage.swift */; };
+		04586E322A1F129B00B228F8 /* ReminderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E312A1F129B00B228F8 /* ReminderScreen.swift */; };
+		04586E342A1F15D900B228F8 /* ReminderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E332A1F15D900B228F8 /* ReminderRow.swift */; };
+		04586E372A1F16C000B228F8 /* ReminderAddUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E362A1F16C000B228F8 /* ReminderAddUpScreen.swift */; };
+		04586E392A1F1AEE00B228F8 /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E382A1F1AEE00B228F8 /* ReminderViewModel.swift */; };
+		04586E452A1FA30B00B228F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E442A1FA30B00B228F8 /* ContentView.swift */; };
+		04586E472A1FA30D00B228F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04586E462A1FA30D00B228F8 /* Assets.xcassets */; };
+		04586E4A2A1FA30D00B228F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04586E492A1FA30D00B228F8 /* Preview Assets.xcassets */; };
+		04586E4F2A1FA43600B228F8 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B22A16588900CC75F9 /* TransactionViewModel.swift */; };
+		04586E502A1FA43900B228F8 /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E382A1F1AEE00B228F8 /* ReminderViewModel.swift */; };
+		04586E522A1FA45A00B228F8 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E512A1FA45A00B228F8 /* Reminder.swift */; };
+		04586E532A1FA45A00B228F8 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E512A1FA45A00B228F8 /* Reminder.swift */; };
+		04586E542A1FB94D00B228F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512A82A1645A200CC75F9 /* MainScreen.swift */; };
+		04586E552A1FBE6400B228F8 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512922A163D2F00CC75F9 /* HomeScreen.swift */; };
+		04586E562A1FBE6900B228F8 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4C52A163BAD006F85F4 /* SplashScreen.swift */; };
+		04586E572A203C3B00B228F8 /* ReminderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E332A1F15D900B228F8 /* ReminderRow.swift */; };
+		04586E582A203C3F00B228F8 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC49D2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld */; };
+		04586E5A2A203C5100B228F8 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E2F2A1C579500B228F8 /* CircleImage.swift */; };
+		04586E5B2A203C5300B228F8 /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512A62A16416000CC75F9 /* Styling.swift */; };
+		04586E5C2A203C5900B228F8 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C5129B2A163FC200CC75F9 /* Inter-ExtraBold.ttf */; };
+		04586E5D2A203C5900B228F8 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C512972A163FC200CC75F9 /* Inter-Medium.ttf */; };
+		04586E5E2A203C5900B228F8 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C5129C2A163FC200CC75F9 /* Inter-SemiBold.ttf */; };
+		04586E5F2A203C5900B228F8 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C512962A163FC200CC75F9 /* Inter-Black.ttf */; };
+		04586E602A203C5900B228F8 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C512982A163FC200CC75F9 /* Inter-Bold.ttf */; };
+		04586E612A203C5900B228F8 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C512992A163FC200CC75F9 /* Inter-Light.ttf */; };
+		04586E622A203C5900B228F8 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C5129A2A163FC200CC75F9 /* Inter-Regular.ttf */; };
+		04586E632A203C6200B228F8 /* StatisticsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512AA2A1645B100CC75F9 /* StatisticsScreen.swift */; };
+		04586E642A203C6600B228F8 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512AC2A1645BC00CC75F9 /* ProfileScreen.swift */; };
+		04586E652A203C6C00B228F8 /* ReminderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E312A1F129B00B228F8 /* ReminderScreen.swift */; };
+		04586E662A203C6E00B228F8 /* ReminderAddUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04586E362A1F16C000B228F8 /* ReminderAddUpScreen.swift */; };
+		04586E672A20410D00B228F8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B02A16575A00CC75F9 /* CoreDataManager.swift */; };
+		04586E682A20475100B228F8 /* ProjectALP_MoneyGeniusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */; };
+		04586E692A20496700B228F8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC49B2A130E5F006F85F4 /* Persistence.swift */; };
+		04586E6A2A2058D700B228F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EBC4962A130E5F006F85F4 /* Assets.xcassets */; };
 		04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512902A163CD400CC75F9 /* CoreDataTutor.swift */; };
 		04C512932A163D2F00CC75F9 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512922A163D2F00CC75F9 /* HomeScreen.swift */; };
 		04C5129D2A163FC200CC75F9 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04C512962A163FC200CC75F9 /* Inter-Black.ttf */; };
@@ -22,7 +56,6 @@
 		04C512AD2A1645BC00CC75F9 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512AC2A1645BC00CC75F9 /* ProfileScreen.swift */; };
 		04C512B12A16575A00CC75F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B02A16575A00CC75F9 /* CoreDataManager.swift */; };
 		04C512B32A16588900CC75F9 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B22A16588900CC75F9 /* TransactionViewModel.swift */; };
-		04C512B62A1673BB00CC75F9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B52A1673BB00CC75F9 /* Transaction.swift */; };
 		04EBC4932A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */; };
 		04EBC4952A130E5E006F85F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4942A130E5E006F85F4 /* ContentView.swift */; };
 		04EBC4972A130E5F006F85F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EBC4962A130E5F006F85F4 /* Assets.xcassets */; };
@@ -30,9 +63,22 @@
 		04EBC49C2A130E5F006F85F4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC49B2A130E5F006F85F4 /* Persistence.swift */; };
 		04EBC49F2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC49D2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld */; };
 		04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4C52A163BAD006F85F4 /* SplashScreen.swift */; };
+		04F3297F2A2211C3008D9103 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3297E2A2211C3008D9103 /* Transaction.swift */; };
+		04F329802A2211C3008D9103 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3297E2A2211C3008D9103 /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04586E2F2A1C579500B228F8 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		04586E312A1F129B00B228F8 /* ReminderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScreen.swift; sourceTree = "<group>"; };
+		04586E332A1F15D900B228F8 /* ReminderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRow.swift; sourceTree = "<group>"; };
+		04586E362A1F16C000B228F8 /* ReminderAddUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAddUpScreen.swift; sourceTree = "<group>"; };
+		04586E382A1F1AEE00B228F8 /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
+		04586E402A1FA30B00B228F8 /* ProjectALP_MoneyGenius_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectALP_MoneyGenius_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04586E442A1FA30B00B228F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04586E462A1FA30D00B228F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04586E492A1FA30D00B228F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04586E4B2A1FA30D00B228F8 /* ProjectALP_MoneyGenius_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectALP_MoneyGenius_Mac.entitlements; sourceTree = "<group>"; };
+		04586E512A1FA45A00B228F8 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		04C512902A163CD400CC75F9 /* CoreDataTutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTutor.swift; sourceTree = "<group>"; };
 		04C512922A163D2F00CC75F9 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		04C512962A163FC200CC75F9 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -49,7 +95,6 @@
 		04C512AC2A1645BC00CC75F9 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		04C512B02A16575A00CC75F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04C512B22A16588900CC75F9 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
-		04C512B52A1673BB00CC75F9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		04EBC48F2A130E5E006F85F4 /* ProjectALP_MoneyGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectALP_MoneyGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectALP_MoneyGeniusApp.swift; sourceTree = "<group>"; };
 		04EBC4942A130E5E006F85F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,9 +103,17 @@
 		04EBC49B2A130E5F006F85F4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		04EBC49E2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectALP_MoneyGenius.xcdatamodel; sourceTree = "<group>"; };
 		04EBC4C52A163BAD006F85F4 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		04F3297E2A2211C3008D9103 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04586E3D2A1FA30B00B228F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04EBC48C2A130E5E006F85F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,6 +124,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04586E352A1F168400B228F8 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				04586E332A1F15D900B228F8 /* ReminderRow.swift */,
+				04586E312A1F129B00B228F8 /* ReminderScreen.swift */,
+				04586E362A1F16C000B228F8 /* ReminderAddUpScreen.swift */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		04586E412A1FA30B00B228F8 /* ProjectALP_MoneyGenius_Mac */ = {
+			isa = PBXGroup;
+			children = (
+				04586E442A1FA30B00B228F8 /* ContentView.swift */,
+				04586E462A1FA30D00B228F8 /* Assets.xcassets */,
+				04586E4B2A1FA30D00B228F8 /* ProjectALP_MoneyGenius_Mac.entitlements */,
+				04586E482A1FA30D00B228F8 /* Preview Content */,
+			);
+			path = ProjectALP_MoneyGenius_Mac;
+			sourceTree = "<group>";
+		};
+		04586E482A1FA30D00B228F8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04586E492A1FA30D00B228F8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		04C5128F2A163C9900CC75F9 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +178,7 @@
 		04C512A52A16414F00CC75F9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04586E2F2A1C579500B228F8 /* CircleImage.swift */,
 				04C512A62A16416000CC75F9 /* Styling.swift */,
 			);
 			path = Helpers;
@@ -105,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				04C512B22A16588900CC75F9 /* TransactionViewModel.swift */,
+				04586E382A1F1AEE00B228F8 /* ReminderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -120,7 +204,8 @@
 		04C512B42A1673AB00CC75F9 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				04C512B52A1673BB00CC75F9 /* Transaction.swift */,
+				04586E512A1FA45A00B228F8 /* Reminder.swift */,
+				04F3297E2A2211C3008D9103 /* Transaction.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -129,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				04EBC4912A130E5E006F85F4 /* ProjectALP_MoneyGenius */,
+				04586E412A1FA30B00B228F8 /* ProjectALP_MoneyGenius_Mac */,
 				04EBC4902A130E5E006F85F4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				04EBC48F2A130E5E006F85F4 /* ProjectALP_MoneyGenius.app */,
+				04586E402A1FA30B00B228F8 /* ProjectALP_MoneyGenius_Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,8 +239,8 @@
 				04C512952A163FA600CC75F9 /* fonts */,
 				04C5128F2A163C9900CC75F9 /* Tutorial */,
 				04EBC4C42A163B9A006F85F4 /* Screens */,
-				04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */,
 				04EBC4942A130E5E006F85F4 /* ContentView.swift */,
+				04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */,
 				04EBC4962A130E5F006F85F4 /* Assets.xcassets */,
 				04EBC49B2A130E5F006F85F4 /* Persistence.swift */,
 				04EBC4982A130E5F006F85F4 /* Preview Content */,
@@ -173,6 +260,7 @@
 		04EBC4C42A163B9A006F85F4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				04586E352A1F168400B228F8 /* Reminder */,
 				04EBC4C52A163BAD006F85F4 /* SplashScreen.swift */,
 				04C512922A163D2F00CC75F9 /* HomeScreen.swift */,
 				04C512A82A1645A200CC75F9 /* MainScreen.swift */,
@@ -185,6 +273,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		04586E3F2A1FA30B00B228F8 /* ProjectALP_MoneyGenius_Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04586E4C2A1FA30D00B228F8 /* Build configuration list for PBXNativeTarget "ProjectALP_MoneyGenius_Mac" */;
+			buildPhases = (
+				04586E3C2A1FA30B00B228F8 /* Sources */,
+				04586E3D2A1FA30B00B228F8 /* Frameworks */,
+				04586E3E2A1FA30B00B228F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjectALP_MoneyGenius_Mac;
+			productName = ProjectALP_MoneyGenius_Mac;
+			productReference = 04586E402A1FA30B00B228F8 /* ProjectALP_MoneyGenius_Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		04EBC48E2A130E5E006F85F4 /* ProjectALP_MoneyGenius */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04EBC4A22A130E5F006F85F4 /* Build configuration list for PBXNativeTarget "ProjectALP_MoneyGenius" */;
@@ -209,9 +314,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					04586E3F2A1FA30B00B228F8 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					04EBC48E2A130E5E006F85F4 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -231,11 +339,29 @@
 			projectRoot = "";
 			targets = (
 				04EBC48E2A130E5E006F85F4 /* ProjectALP_MoneyGenius */,
+				04586E3F2A1FA30B00B228F8 /* ProjectALP_MoneyGenius_Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		04586E3E2A1FA30B00B228F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04586E5D2A203C5900B228F8 /* Inter-Medium.ttf in Resources */,
+				04586E622A203C5900B228F8 /* Inter-Regular.ttf in Resources */,
+				04586E5F2A203C5900B228F8 /* Inter-Black.ttf in Resources */,
+				04586E612A203C5900B228F8 /* Inter-Light.ttf in Resources */,
+				04586E6A2A2058D700B228F8 /* Assets.xcassets in Resources */,
+				04586E4A2A1FA30D00B228F8 /* Preview Assets.xcassets in Resources */,
+				04586E602A203C5900B228F8 /* Inter-Bold.ttf in Resources */,
+				04586E472A1FA30D00B228F8 /* Assets.xcassets in Resources */,
+				04586E5E2A203C5900B228F8 /* Inter-SemiBold.ttf in Resources */,
+				04586E5C2A203C5900B228F8 /* Inter-ExtraBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04EBC48D2A130E5E006F85F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,11 +381,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		04586E3C2A1FA30B00B228F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04586E682A20475100B228F8 /* ProjectALP_MoneyGeniusApp.swift in Sources */,
+				04586E5B2A203C5300B228F8 /* Styling.swift in Sources */,
+				04586E662A203C6E00B228F8 /* ReminderAddUpScreen.swift in Sources */,
+				04586E632A203C6200B228F8 /* StatisticsScreen.swift in Sources */,
+				04586E562A1FBE6900B228F8 /* SplashScreen.swift in Sources */,
+				04586E642A203C6600B228F8 /* ProfileScreen.swift in Sources */,
+				04586E672A20410D00B228F8 /* CoreDataManager.swift in Sources */,
+				04586E692A20496700B228F8 /* Persistence.swift in Sources */,
+				04586E652A203C6C00B228F8 /* ReminderScreen.swift in Sources */,
+				04586E542A1FB94D00B228F8 /* MainScreen.swift in Sources */,
+				04586E502A1FA43900B228F8 /* ReminderViewModel.swift in Sources */,
+				04F329802A2211C3008D9103 /* Transaction.swift in Sources */,
+				04586E552A1FBE6400B228F8 /* HomeScreen.swift in Sources */,
+				04586E5A2A203C5100B228F8 /* CircleImage.swift in Sources */,
+				04586E452A1FA30B00B228F8 /* ContentView.swift in Sources */,
+				04586E4F2A1FA43600B228F8 /* TransactionViewModel.swift in Sources */,
+				04586E582A203C3F00B228F8 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */,
+				04586E532A1FA45A00B228F8 /* Reminder.swift in Sources */,
+				04586E572A203C3B00B228F8 /* ReminderRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04EBC48B2A130E5E006F85F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C512B62A1673BB00CC75F9 /* Transaction.swift in Sources */,
 				04C512B32A16588900CC75F9 /* TransactionViewModel.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
 				04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */,
@@ -271,14 +422,79 @@
 				04EBC49C2A130E5F006F85F4 /* Persistence.swift in Sources */,
 				04EBC49F2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */,
 				04C512A92A1645A200CC75F9 /* MainScreen.swift in Sources */,
+				04586E342A1F15D900B228F8 /* ReminderRow.swift in Sources */,
+				04586E302A1C579500B228F8 /* CircleImage.swift in Sources */,
 				04EBC4952A130E5E006F85F4 /* ContentView.swift in Sources */,
+				04F3297F2A2211C3008D9103 /* Transaction.swift in Sources */,
+				04586E392A1F1AEE00B228F8 /* ReminderViewModel.swift in Sources */,
+				04586E322A1F129B00B228F8 /* ReminderScreen.swift in Sources */,
+				04586E372A1F16C000B228F8 /* ReminderAddUpScreen.swift in Sources */,
 				04EBC4932A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift in Sources */,
+				04586E522A1FA45A00B228F8 /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		04586E4D2A1FA30D00B228F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectALP_MoneyGenius_Mac/ProjectALP_MoneyGenius_Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ProjectALP_MoneyGenius_Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 64HTLCWMUT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ciputra.ProjectALP-MoneyGenius-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		04586E4E2A1FA30D00B228F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectALP_MoneyGenius_Mac/ProjectALP_MoneyGenius_Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ProjectALP_MoneyGenius_Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 64HTLCWMUT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ciputra.ProjectALP-MoneyGenius-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		04EBC4A02A130E5F006F85F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -456,6 +672,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04586E4C2A1FA30D00B228F8 /* Build configuration list for PBXNativeTarget "ProjectALP_MoneyGenius_Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04586E4D2A1FA30D00B228F8 /* Debug */,
+				04586E4E2A1FA30D00B228F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04EBC48A2A130E5E006F85F4 /* Build configuration list for PBXProject "ProjectALP_MoneyGenius" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

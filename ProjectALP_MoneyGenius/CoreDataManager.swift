@@ -31,6 +31,14 @@ class CoreDataManager{
             return []
         }
     }
+    func getAllReminders() -> [Reminder] {
+            let request: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+            do {
+                return try viewContext.fetch(request)
+            } catch {
+                return []
+            }
+        }
     
     func save(){
         do{
@@ -54,6 +62,18 @@ class CoreDataManager{
         return items.first
            
     }
+    
+    func getReminderById(id: UUID) -> Reminder? {
+            let request: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+            request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            guard let reminders = try? viewContext.fetch(request) else { return nil }
+            return reminders.first
+        }
+        
+    func deleteReminder(reminder: Reminder) {
+            viewContext.delete(reminder)
+        }
     
     func deleteTrancaction(trans : Transaction){
         viewContext.delete(trans)
