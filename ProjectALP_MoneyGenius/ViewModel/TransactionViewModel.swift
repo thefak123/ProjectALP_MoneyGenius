@@ -19,15 +19,31 @@ class TransactionViewModel : ObservableObject{
     }
     
     func deleteTransaction(index : Int){
-        coreDataManager.deleteTrancaction(trans: transactions[index].transaction )
+        let trans = coreDataManager.getTransactionById(id: transactions[index].id)
+        coreDataManager.deleteTrancaction(trans: trans!)
+        self.getAllTransaction()
+    }
+    
+    func getTotalSum() -> Int{
+        return coreDataManager.getSumOfTransaction()
+    }
+    
+    func getSumOfTransactionByCatId(){
+//        coreDataManager.getSumOfTransactionByCatId()
     }
     
     func insert(){
         let transaction = Transaction(context: coreDataManager.viewContext)
-        transaction.id = UUID()
         transaction.amount = Int64(self.amount)
         transaction.name = self.name
         coreDataManager.save()
     }
+    
+    func sumAllTransaction(){
+        
+    }
+    
+    
+    
     
 }

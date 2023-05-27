@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    var viewModel = HomeScreenViewModel()
     var body: some View {
         TabView{
             MainScreen().tabItem{
@@ -22,6 +23,8 @@ struct HomeScreen: View {
                 Image(systemName:"person.crop.circle")
                 Text("Profile")
             }
+        }.onAppear{
+            viewModel.setAllCategories()
         }
     }
 }

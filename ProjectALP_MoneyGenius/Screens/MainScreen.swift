@@ -9,48 +9,71 @@ import SwiftUI
 
 struct MainScreen: View {
     @StateObject private var viewModel = TransactionViewModel()
-
+    
+    @State var path = NavigationPath()
     func deleteTransaction(offsets : IndexSet){
         offsets.forEach{ index in
             viewModel.deleteTransaction(index: index)
         }
     }
     
+    @State private var tabBar: UITabBar! = nil
+    
     var body: some View {
-        VStack{
-            
-            TextField("Enter transaction name", text: $viewModel.name)
-            TextField("Enter transaction amount", text:Binding(
-                get: { String(viewModel.amount) },
-                set: {
-                    if let val = Int($0)  {
-                        viewModel.amount = val
-                    } else {
-                        viewModel.amount = 0
+        NavigationStack(path: $path){
+            VStack{
+                
+                TextField("Enter transaction name", text: $viewModel.name)
+                TextField("Enter transaction amount", text:Binding(
+                    get: { String(viewModel.amount) },
+                    set: {
+                        if let val = Int($0)  {
+                            viewModel.amount = val
+                        } else {
+                            viewModel.amount = 0
+                        }
+                        
+                        
                     }
-                    
+                )).keyboardType(.numberPad)
+                
+                Button("Insert"){
+                    viewModel.insert()
+                    viewModel.getAllTransaction()
+                }
+                
+                Text(String(viewModel.getTotalSum())).font(.system(size: 35))
+                
+                List{
+                    ForEach(viewModel.transactions, id: \.id){ trans in
+                        VStack{
+                            Text(trans.name)
+                            Text(String(trans.amount))
+                        }
+                    }.onDelete(perform: deleteTransaction)
                     
                 }
-            )).keyboardType(.numberPad)
                 
-            Button("Insert"){
-                viewModel.insert()
-                viewModel.getAllTransaction()
-            }
-            
-            List{
-                ForEach(viewModel.transactions, id: \.id){ trans in
-                    VStack{
-                        Text(trans.name)
-                        Text(String(trans.amount))
+                Button("to budget screen"){
+                    path.append("budgetscreen")
+                }.navigationDestination(for: String.self) { view in
+                    if view == "budgetscreen" {
+                        
+                        BudgetScreen(path: $path).toolbar(.hidden, for: .tabBar)
+                        
+                    }else if view == "addbudget"{
+                        AddBudgetScreen()
                     }
-                }.onDelete(perform: deleteTransaction)
+                    
+                }
                 
+                
+                
+            }.onAppear{
+                viewModel.getAllTransaction()
+                viewModel.getSumOfTransactionByCatId()
             }
-                
             
-        }.onAppear{
-            viewModel.getAllTransaction()
         }
     }
 }

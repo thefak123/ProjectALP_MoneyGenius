@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import CoreData
 
 struct TransactionStruct{
     var transaction : Transaction
     
-    var id : UUID {
-        return transaction.id!
+    var id : NSManagedObjectID {
+        return transaction.objectID
     }
     
     var name : String {
