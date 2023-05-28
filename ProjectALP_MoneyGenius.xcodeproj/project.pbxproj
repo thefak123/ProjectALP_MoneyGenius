@@ -16,6 +16,7 @@
 		048FC4DF2A23261000C6E728 /* DelagateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4DE2A23261000C6E728 /* DelagateScene.swift */; };
 		048FC4E12A23269600C6E728 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4E02A23269600C6E728 /* Header.swift */; };
 		048FC4E52A2355DF00C6E728 /* colorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4E42A2355DF00C6E728 /* colorSlider.swift */; };
+		048FC4EE2A235D7B00C6E728 /* SetUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4ED2A235D7B00C6E728 /* SetUpScreen.swift */; };
 		0496DA2F2A1DA05800F3CF2B /* BudgetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA2E2A1DA05800F3CF2B /* BudgetScreen.swift */; };
 		0496DA322A1DA0EC00F3CF2B /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA312A1DA0EC00F3CF2B /* ProgressBarComponent.swift */; };
 		0496DA342A1E098600F3CF2B /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */; };
@@ -60,6 +61,7 @@
 		048FC4DE2A23261000C6E728 /* DelagateScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelagateScene.swift; sourceTree = "<group>"; };
 		048FC4E02A23269600C6E728 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		048FC4E42A2355DF00C6E728 /* colorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorSlider.swift; sourceTree = "<group>"; };
+		048FC4ED2A235D7B00C6E728 /* SetUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpScreen.swift; sourceTree = "<group>"; };
 		0496DA2E2A1DA05800F3CF2B /* BudgetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetScreen.swift; sourceTree = "<group>"; };
 		0496DA312A1DA0EC00F3CF2B /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
 		0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				0496DA352A1E0AA000F3CF2B /* AddBudgetScreen.swift */,
 				0448A4052A20F9C700997EBB /* TransactionScreen.swift */,
 				0448A4072A20FE1600997EBB /* AddTransactionScreen.swift */,
+				048FC4ED2A235D7B00C6E728 /* SetUpScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				0496DA362A1E0AA000F3CF2B /* AddBudgetScreen.swift in Sources */,
 				04EBC49F2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */,
 				0448A40A2A20FEC300997EBB /* TextInputComponent.swift in Sources */,
+				048FC4EE2A235D7B00C6E728 /* SetUpScreen.swift in Sources */,
 				04C512A92A1645A200CC75F9 /* MainScreen.swift in Sources */,
 				04EBC4952A130E5E006F85F4 /* ContentView.swift in Sources */,
 				0496DA2F2A1DA05800F3CF2B /* BudgetScreen.swift in Sources */,
