@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileScreen: View {
     var body: some View {
-        Text("Hello, This is profile screen")
+        Text("Hello, This is profile anjay screen")
     }
 }
 
