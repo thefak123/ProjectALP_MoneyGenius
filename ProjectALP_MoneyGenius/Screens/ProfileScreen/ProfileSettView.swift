@@ -45,7 +45,7 @@ struct ProfileSettings: View {
                     // Action
                 },
                 label: {
-                    Text("Pick Profile Image")
+                    Text("Edit Profile Image")
                 }
             )
             TextField("Name", text: $name)
@@ -73,19 +73,20 @@ struct HeaderBackgroundSliders: View {
                 //                    Text("G: \(Int(gValue * 255.0))")
                 //                    Text("B: \(Int(bValue * 255.0))")
                 //                }
-//                VStack {
-//                    colorSlider(value: $rValue, textColor: .red)
-//                    colorSlider(value: $gValue, textColor: .green)
-//                    colorSlider(value: $bValue, textColor: .blue)
+                VStack {
+                    colorSlider(value: $rValue, textColor: .red)
+                    colorSlider(value: $gValue, textColor: .green)
+                    colorSlider(value: $bValue, textColor: .blue)
                 }
             }
         }
     }
-
-
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileSettView()
+    
+    
+    
+    struct SettingsView_Previews: PreviewProvider {
+        static var previews: some View {
+            ProfileSettView()
+        }
     }
 }

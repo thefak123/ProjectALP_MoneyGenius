@@ -15,6 +15,7 @@
 		048FC4DC2A23246A00C6E728 /* ProfileSettView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4DB2A23246A00C6E728 /* ProfileSettView.swift */; };
 		048FC4DF2A23261000C6E728 /* DelagateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4DE2A23261000C6E728 /* DelagateScene.swift */; };
 		048FC4E12A23269600C6E728 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4E02A23269600C6E728 /* Header.swift */; };
+		048FC4E52A2355DF00C6E728 /* colorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4E42A2355DF00C6E728 /* colorSlider.swift */; };
 		0496DA2F2A1DA05800F3CF2B /* BudgetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA2E2A1DA05800F3CF2B /* BudgetScreen.swift */; };
 		0496DA322A1DA0EC00F3CF2B /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA312A1DA0EC00F3CF2B /* ProgressBarComponent.swift */; };
 		0496DA342A1E098600F3CF2B /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */; };
@@ -58,6 +59,7 @@
 		048FC4DB2A23246A00C6E728 /* ProfileSettView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettView.swift; sourceTree = "<group>"; };
 		048FC4DE2A23261000C6E728 /* DelagateScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelagateScene.swift; sourceTree = "<group>"; };
 		048FC4E02A23269600C6E728 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		048FC4E42A2355DF00C6E728 /* colorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorSlider.swift; sourceTree = "<group>"; };
 		0496DA2E2A1DA05800F3CF2B /* BudgetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetScreen.swift; sourceTree = "<group>"; };
 		0496DA312A1DA0EC00F3CF2B /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
 		0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				04C512AC2A1645BC00CC75F9 /* ProfileScreen.swift */,
 				048FC4DE2A23261000C6E728 /* DelagateScene.swift */,
 				048FC4E02A23269600C6E728 /* Header.swift */,
+				048FC4E42A2355DF00C6E728 /* colorSlider.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				04C512AB2A1645B100CC75F9 /* StatisticsScreen.swift in Sources */,
 				0448A4082A20FE1700997EBB /* AddTransactionScreen.swift in Sources */,
 				04C512A72A16416000CC75F9 /* Styling.swift in Sources */,
+				048FC4E52A2355DF00C6E728 /* colorSlider.swift in Sources */,
 				04C512AD2A1645BC00CC75F9 /* ProfileScreen.swift in Sources */,
 				0496DA342A1E098600F3CF2B /* FloatingActionButton.swift in Sources */,
 				048FC4DF2A23261000C6E728 /* DelagateScene.swift in Sources */,

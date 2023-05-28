@@ -14,6 +14,7 @@ struct ProfileScreen: View {
         VStack {
             VStack {
                 Header()
+                CircleImage()
                 ProfileText()
             }
             Spacer()
@@ -35,8 +36,8 @@ struct ProfileText: View {
     @AppStorage("description") var description = Profile.description
     
     var body: some View {
-        VStack(spacing: 15) {
-            VStack(spacing: 5) {
+        VStack(spacing: 1) {
+            VStack(spacing: 3) {
                 Text(name)
                     .bold()
                     .font(.title)
@@ -49,6 +50,23 @@ struct ProfileText: View {
                 .padding()
             Spacer()
         }
+    }
+}
+
+struct CircleImage: View {
+    var body: some View {
+        Image("logo")
+            .clipShape(Circle())
+            .overlay {
+                Circle().stroke(.gray, lineWidth: 4)
+            }
+            .shadow(radius: 7)
+    }
+}
+
+struct CircleImage_Previews: PreviewProvider {
+    static var previews: some View {
+        CircleImage()
     }
 }
 
