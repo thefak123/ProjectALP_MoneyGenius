@@ -12,10 +12,16 @@ struct BudgetScreen: View {
     @State var maxValue: [Float] = [100, 100, 100, 100]
     @Binding var path : NavigationPath
     @StateObject private var viewModel = BudgetViewModel()
+    func deleteBudget(idx : IndexSet){
+        print(idx)
+    }
     var body: some View {
         ZStack{
             List{
-                    ProgressBarComponent(maxValue: $maxValue[0], progressValue: $progressValue[0], category: "Food").listRowSeparator(.hidden)
+                ForEach(viewModel.budgets, id: \.id){ budget in
+                    ProgressBarComponent(maxValue: Float(budget.max_value), progressValue: Float(budget.totalAmount), category: budget.category_name).listRowSeparator(.hidden)
+                }.onDelete(perform: deleteBudget)
+                    
                 
                 
             }.scrollContentBackground(.hidden).floatingActionButton(color: .blue,
@@ -24,7 +30,9 @@ struct BudgetScreen: View {
                     path.append("addbudget")
                 }
             Spacer()
-        }.padding(20)
+        }.padding(20).onAppear{
+            viewModel.getAllBudgetInfo()
+        }
         
     }
 }

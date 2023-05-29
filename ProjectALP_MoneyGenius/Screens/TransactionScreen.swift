@@ -22,53 +22,42 @@ struct TransactionScreen: View {
     
     var body: some View {
         List{
-            VStack{
+            Section{
                 HStack {
                     Text("Today's Income")
                     Spacer()
-                    Button(action: {
+                    Image(systemName: "plus").onTapGesture{
                         path.append("addtransactionincome")
-                    }) {
-                        Image(systemName: "plus")
                     }
                     
+                    
                 }
-                Divider()
                 ForEach(viewModel.transactions, id: \.id){ trans in
                     if trans.categoryType == "income" {
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text(trans.categoryName).fontWeight(.bold).font(.system(size:17))
-                                Text(trans.note)
-                            }
-                            Spacer()
-                            Text("Rp. \(String(trans.amount))").fontWeight(.bold)
+                        TransactionCardComponent(trans: trans).onTapGesture{
+                            path.append(trans)
                         }
+                        
+                       
                     }
                 }.onDelete(perform: deleteTransaction)
             }
-            VStack{
+            Section{
                 HStack {
                     Text("Today's Outcome")
                     Spacer()
-                    Button(action: {
+                    Image(systemName: "plus").onTapGesture{
                         path.append("addtransactionoutcome")
-                    }) {
-                        Image(systemName: "plus")
                     }
                     
+                    
                 }
-                Divider()
                 ForEach(viewModel.transactions, id: \.id){ trans in
                     if trans.categoryType == "expense" {
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text(trans.categoryName).fontWeight(.bold).font(.system(size:17))
-                                Text(trans.note)
-                            }
-                            Spacer()
-                            Text("Rp. \(String(trans.amount))").fontWeight(.bold)
+                        TransactionCardComponent(trans: trans).onTapGesture{
+                            path.append(trans)
                         }
+                        
                     }
                 }.onDelete(perform: deleteTransaction)
                 Spacer()

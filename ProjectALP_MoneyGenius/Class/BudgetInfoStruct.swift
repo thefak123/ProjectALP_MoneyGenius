@@ -9,5 +9,7 @@ import Foundation
 
 struct BudgetInfoStruct{
     var totalAmount : Int
-    var category_id : UUID
+    var id : UUID
+    var category_name : String
+    var max_value : Int64
 }

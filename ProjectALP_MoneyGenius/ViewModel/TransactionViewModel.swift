@@ -19,8 +19,13 @@ class TransactionViewModel : ObservableObject{
     
     func getAllTransaction() {
         transactions = coreDataManager.getAllTransaction().map(TransactionStruct.init)
-        print(transactions[transactions.count - 1].transaction)
         
+    }
+    
+    func updateTransaction(id : NSManagedObjectID){
+        if category != nil{
+            coreDataManager.updateTransaction(id: id, type: type, amount: Int64(amount) ?? 0, note: note, category_name: category?.name ?? "", category_type: category?.type ?? "")
+        }
     }
     
     
@@ -58,6 +63,10 @@ class TransactionViewModel : ObservableObject{
     
     func sumAllTransaction(){
         
+    }
+    
+    func removeAllTransaction(){
+        coreDataManager.removeAllTransaction()
     }
     
     

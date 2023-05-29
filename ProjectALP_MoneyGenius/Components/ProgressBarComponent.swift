@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProgressBarComponent: View {
-    @Binding var maxValue: Float
-    @Binding var progressValue : Float
+    var maxValue: Float
+    var progressValue : Float
     var category : String
     
     var body: some View {

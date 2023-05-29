@@ -79,9 +79,11 @@ struct MainScreen: View {
                 }else if view == "addtransactionoutcome"{
                     AddTransactionScreen(type: "expense", path: $path)
                 }else if view == "addbudget"{
-                    AddBudgetScreen()
+                    AddBudgetScreen(path: $path)
                 }
                 
+            }.navigationDestination(for: TransactionStruct.self){trans in
+                AddTransactionScreen(trans: trans,type:trans.categoryType, path: $path)
             }
             
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddBudgetScreen: View {
     @StateObject var viewModel = BudgetViewModel()
-    
+    @Binding var path : NavigationPath
     var body: some View {
             VStack(alignment: .leading) {
                 Text("Add Budget").font(.title).padding(.bottom, 10)
@@ -48,6 +48,7 @@ struct AddBudgetScreen: View {
                 
                 Button(action: {
                     viewModel.insertNewBudget()
+                    path.removeLast()
                 }){
                     Text("Add Budget").frame(width: 150 , height: 50, alignment: .center)
                 }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)
@@ -63,8 +64,8 @@ struct AddBudgetScreen: View {
 }
 
 struct AddBudgetScreen_Previews: PreviewProvider {
-    
+    @State static var path = NavigationPath()
     static var previews: some View {
-        AddBudgetScreen()
+        AddBudgetScreen(path: $path)
     }
 }

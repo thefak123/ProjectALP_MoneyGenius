@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddTransactionScreen: View {
+    var trans : TransactionStruct? = nil
     var type : String
     @StateObject var viewModel = TransactionViewModel()
     @Binding var path : NavigationPath
@@ -39,16 +40,25 @@ struct AddTransactionScreen: View {
                     .stroke(Color(UIColor.lightGray), lineWidth: 1)
             ).frame(height: 150)
             Button(action: {
-                viewModel.addTransaction()
-                viewModel.emptyAllVariables()
+                if trans != nil {
+                    viewModel.updateTransaction(id: trans!.id)
+
+                }else{
+                    viewModel.addTransaction()
+
+                }
                 path.removeLast()
             }){
-                Text("Add Transaction").frame(width: 150 , height: 50, alignment: .center)
+                Text("\(trans != nil ? "Edit" : "Add") Transaction").frame(width: 150 , height: 50, alignment: .center)
             }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)
             Spacer()
         }.padding(20).onAppear{
             viewModel.type = self.type
             viewModel.getAllCategories(type: self.type)
+            viewModel.category = trans?.transaction.category.map(CategoryStruct.init)
+            viewModel.note = trans?.note ?? ""
+            viewModel.amount = String(trans?.amount ?? 0) 
+            
         }
     }
 }

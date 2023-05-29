@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct TransactionStruct{
+struct TransactionStruct : Hashable{
     var transaction : Transaction
     var id : NSManagedObjectID {
         return transaction.objectID

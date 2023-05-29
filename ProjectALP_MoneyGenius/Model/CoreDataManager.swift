@@ -115,6 +115,7 @@ class CoreDataManager{
         }
     }
     
+    
     func getAllCategories(type : String) -> [Category]{
         let request : NSFetchRequest<Category> = Category.fetchRequest()
         request.predicate = NSPredicate(format: "type == %@", type)
@@ -163,11 +164,14 @@ class CoreDataManager{
     
     
     // Budget Area
-    func saveBudget(category_id : UUID, max_budget : String, initialDate : Date, endDate : Date){
+    func saveBudget(max_budget : String, initialDate : Date, endDate : Date, category_name : String, category_type : String){
         let budget = Budget(context: viewContext)
         budget.startDate = initialDate
         budget.endDate = endDate
         budget.maxBudget = Int64(max_budget)!
+        let category = Category(context: viewContext)
+        category.name = category_name
+        category.type = category_type
         do{
             try viewContext.save()
         }catch{
@@ -182,6 +186,25 @@ class CoreDataManager{
             let result = try viewContext.fetch(request)
             print(result)
             return result
+        }catch{
+            print("There is some error : \(error)")
+            return []
+        }
+    }
+    
+    func getAllBudgetInfo() -> [BudgetInfoStruct]{
+        let request : NSFetchRequest<Budget> = Budget.fetchRequest()
+        var resultData : [BudgetInfoStruct] = []
+
+        
+        do{
+            let result = try viewContext.fetch(request)
+            for data in result {
+                let value = getSumExpenseTransactionByCategoryName(category_name: data.category?.name ?? "")
+                let budgetinfo = BudgetInfoStruct(totalAmount: value, id: UUID(), category_name: data.category?.name ?? "", max_value: Int64(data.maxBudget))
+                resultData.append(budgetinfo)
+            }
+            return resultData
         }catch{
             print("There is some error : \(error)")
             return []
@@ -207,9 +230,91 @@ class CoreDataManager{
         }
     }
     
+    func getSumExpenseTransactionByCategoryName(category_name : String) -> Int{
+        let request : NSFetchRequest<Transaction> = Transaction.fetchRequest()
+        request.predicate = NSPredicate(format: "category.name == %@", category_name)
+        request.resultType = .dictionaryResultType
+        let sumExpression = NSExpressionDescription()
+        sumExpression.name = "sumAmount"
+        sumExpression.expression = NSExpression(forFunction: "sum:", arguments: [NSExpression(forKeyPath: "amount")])
+        sumExpression.expressionResultType = .doubleAttributeType
+        
+        request.propertiesToFetch = [sumExpression]
+        do{
+            let results = try viewContext.fetch(request) as! [NSDictionary]
+            
+            // Access the aggregated value
+            if let totalQuantity = results.first?["sumAmount"] as? Int {
+                return totalQuantity
+            }
+        }catch{
+            print("There is some error : \(error)")
+            
+        }
+        return 0
+    }
+    
+    func removeAllTransaction(){
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Transaction")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do{
+            let results = try viewContext.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                viewContext.delete(objectData)
+            }
+            try? viewContext.save()
+        }catch{
+            
+        }
+    }
+    
+    func getLatestTransaction(n : Int) -> [Transaction]{
+        let fetchRequest : NSFetchRequest<Transaction> = Transaction.fetchRequest()
+        var transactionSort = NSSortDescriptor(key:"date", ascending:false)
+        fetchRequest.sortDescriptors = [transactionSort]
+        if n > 0 {
+            fetchRequest.fetchLimit = n
+        }
+        do {
+            return try viewContext.fetch(fetchRequest)
+        } catch {
+            print("Cannot fetch Expenses")
+        }
+        return []
+    }
+    
+    func getSumTransactionByMonth(type : String) -> [ChartInfoStruct]{
+                
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Transaction")
+        fetchRequest.predicate = NSPredicate(format: "category.type == %@", type)
+        var result : [ChartInfoStruct] = []
+            // Perform the fetch request
+            do {
+                let fetchedObjects = try? viewContext.fetch(fetchRequest) as? [Transaction]
+                if fetchedObjects != nil {
+                    let resultData = Dictionary(grouping: fetchedObjects!) { elemen in
+                        return elemen.date?.month
+                    }
+                    for key in resultData.keys{
+                        var monthName = DateFormatter().monthSymbols[key ?? 1 - 1]
+                        var totalAmount = (resultData[key ?? 1]?.reduce(0, {$0 + $1.amount}))!
+                        let chartInfo = ChartInfoStruct(id: UUID(), monthName: monthName, totalAmount: Int(totalAmount))
+                        result.append(chartInfo)
+                    }
+                }
+                
+            } catch {
+                print("Error fetching data: \(error)")
+            }
+        print(result)
+        return result
+            
+    }
+    
     func getAllExpensesTransaction() -> [Transaction]{
         let request : NSFetchRequest<Transaction> = Transaction.fetchRequest()
-        request.predicate = NSPredicate(format: "category.name == %@", "expense")
+        request.predicate = NSPredicate(format: "category.type == %@", "expense")
         do{
             let result = try viewContext.fetch(request)
             return result
@@ -259,6 +364,7 @@ class CoreDataManager{
         transaction.type = type
         transaction.amount = amount
         transaction.note = note
+        transaction.date = Date()
         let category = Category(context: viewContext)
         category.name = category_name
         category.type = category_type
@@ -268,6 +374,18 @@ class CoreDataManager{
             print("Added")
         
         
+    }
+    
+    func updateTransaction(id : NSManagedObjectID,type : String, amount : Int64, note : String, category_name : String, category_type : String){
+        let transaction = getTransactionById(id: id)
+        transaction?.type = type
+        transaction?.amount = amount
+        transaction?.note = note
+        transaction?.category?.name = category_name
+        transaction?.category?.type = category_type
+       
+        try! viewContext.save()
+            print("Added")
     }
     
 //    func removeAllTransaction(){

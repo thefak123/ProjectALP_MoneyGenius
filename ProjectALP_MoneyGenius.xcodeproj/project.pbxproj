@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04292FD82A248344000DE0E1 /* ChartInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */; };
+		04292FDD2A2495ED000DE0E1 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */; };
+		04292FE02A249F30000DE0E1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDF2A249F30000DE0E1 /* DateExtension.swift */; };
+		04292FE42A24D623000DE0E1 /* TransactionCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */; };
 		0448A4062A20F9C700997EBB /* TransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A4052A20F9C700997EBB /* TransactionScreen.swift */; };
 		0448A4082A20FE1700997EBB /* AddTransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A4072A20FE1600997EBB /* AddTransactionScreen.swift */; };
 		0448A40A2A20FEC300997EBB /* TextInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A4092A20FEC300997EBB /* TextInputComponent.swift */; };
@@ -52,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInfoStruct.swift; sourceTree = "<group>"; };
+		04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		04292FDF2A249F30000DE0E1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardComponent.swift; sourceTree = "<group>"; };
 		0448A4052A20F9C700997EBB /* TransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionScreen.swift; sourceTree = "<group>"; };
 		0448A4072A20FE1600997EBB /* AddTransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionScreen.swift; sourceTree = "<group>"; };
 		0448A4092A20FEC300997EBB /* TextInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputComponent.swift; sourceTree = "<group>"; };
@@ -109,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04292FDE2A249F21000DE0E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04292FDF2A249F30000DE0E1 /* DateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		048FC4DD2A2325B900C6E728 /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +143,7 @@
 				0496DA312A1DA0EC00F3CF2B /* ProgressBarComponent.swift */,
 				0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */,
 				0448A4092A20FEC300997EBB /* TextInputComponent.swift */,
+				04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -168,6 +185,7 @@
 				0496DA372A1E303000F3CF2B /* BudgetViewModel.swift */,
 				04B24F982A218FC50031D865 /* MainViewModel.swift */,
 				048FC4D72A2322D300C6E728 /* ProfileViewModel.swift */,
+				04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,6 +207,7 @@
 				0496DA3D2A1F058A00F3CF2B /* BudgetStruct.swift */,
 				0496DA412A2060A200F3CF2B /* BudgetInfoStruct.swift */,
 				048FC4D92A2323C700C6E728 /* Profile.swift */,
+				04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -212,6 +231,7 @@
 		04EBC4912A130E5E006F85F4 /* ProjectALP_MoneyGenius */ = {
 			isa = PBXGroup;
 			children = (
+				04292FDE2A249F21000DE0E1 /* Extensions */,
 				0496DA302A1DA0DC00F3CF2B /* Components */,
 				04C512B42A1673AB00CC75F9 /* Class */,
 				04C512AF2A164F1C00CC75F9 /* Model */,
@@ -335,6 +355,7 @@
 				04C512B62A1673BB00CC75F9 /* Transaction.swift in Sources */,
 				04C512B32A16588900CC75F9 /* TransactionViewModel.swift in Sources */,
 				048FC4E12A23269600C6E728 /* Header.swift in Sources */,
+				04292FDD2A2495ED000DE0E1 /* StatisticsViewModel.swift in Sources */,
 				0496DA422A2060A200F3CF2B /* BudgetInfoStruct.swift in Sources */,
 				048FC4D82A2322D300C6E728 /* ProfileViewModel.swift in Sources */,
 				0496DA382A1E303000F3CF2B /* BudgetViewModel.swift in Sources */,
@@ -343,12 +364,15 @@
 				0496DA3C2A1E4B1300F3CF2B /* CategoryStruct.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
 				04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */,
+				04292FE42A24D623000DE0E1 /* TransactionCardComponent.swift in Sources */,
 				04C512AB2A1645B100CC75F9 /* StatisticsScreen.swift in Sources */,
+				04292FE02A249F30000DE0E1 /* DateExtension.swift in Sources */,
 				0448A4082A20FE1700997EBB /* AddTransactionScreen.swift in Sources */,
 				04C512A72A16416000CC75F9 /* Styling.swift in Sources */,
 				048FC4E52A2355DF00C6E728 /* colorSlider.swift in Sources */,
 				04C512AD2A1645BC00CC75F9 /* ProfileScreen.swift in Sources */,
 				0496DA342A1E098600F3CF2B /* FloatingActionButton.swift in Sources */,
+				04292FD82A248344000DE0E1 /* ChartInfoStruct.swift in Sources */,
 				048FC4DF2A23261000C6E728 /* DelagateScene.swift in Sources */,
 				04C512932A163D2F00CC75F9 /* HomeScreen.swift in Sources */,
 				0496DA3E2A1F058A00F3CF2B /* BudgetStruct.swift in Sources */,

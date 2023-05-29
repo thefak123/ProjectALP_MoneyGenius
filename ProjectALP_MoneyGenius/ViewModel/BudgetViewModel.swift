@@ -9,10 +9,9 @@ import Foundation
 import CoreData
 
 class BudgetViewModel : ObservableObject{
-    @Published var categoryId : UUID = UUID()
     @Published var categoryName : String = "Select the category"
     @Published var categories : [CategoryStruct] = []
-    @Published var budgets : [BudgetStruct] = []
+    @Published var budgets : [BudgetInfoStruct] = []
     var maxBudget : String = ""
     var startDate : Date = Date()
     var endDate : Date = Date()
@@ -25,12 +24,14 @@ class BudgetViewModel : ObservableObject{
         print(categories)
     }
     
-    func getAllBudgets() {
-        budgets = coreDataManager.getAllBudget().map(BudgetStruct.init)
-    }
+    
     
     func insertNewBudget(){
-        coreDataManager.saveBudget(category_id: categoryId, max_budget: maxBudget, initialDate: startDate, endDate: endDate)
+        coreDataManager.saveBudget(max_budget: maxBudget, initialDate: startDate, endDate: endDate, category_name: categoryName, category_type: "expense")
+    }
+    
+    func getAllBudgetInfo(){
+        budgets = coreDataManager.getAllBudgetInfo()
     }
     
 }

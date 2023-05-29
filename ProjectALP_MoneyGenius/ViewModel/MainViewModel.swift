@@ -43,6 +43,10 @@ class MainViewModel : ObservableObject{
         
     }
     
+    func removeAllTransaction(){
+        coreDataManager.removeAllTransaction()
+    }
+    
     
     
     
