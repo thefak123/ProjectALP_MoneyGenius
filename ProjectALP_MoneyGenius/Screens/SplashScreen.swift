@@ -18,7 +18,7 @@ struct SplashScreen: View {
                 Image("logo")
                 Text("Money Genius")
                     .font(.custom("Inter-Bold", size: 36))
-                    .foregroundColor(Color(hex: 0xf004AAD))
+                    .foregroundColor(Color(hex: "004AAD"))
             }
         }
     }

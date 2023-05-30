@@ -8,7 +8,8 @@
 import SwiftUI
 struct HomeScreen: View {
     @State private var selectedTab: Tab? = .home
-    
+    @State private var initialSelection: Tab? = .home
+       
     enum Tab {
         case home
         case statistics
@@ -41,24 +42,24 @@ struct HomeScreen: View {
         }
         #else
         NavigationView {
-            List(selection: $selectedTab) {
-                NavigationLink(destination: MainScreen(), tag: Tab.home, selection: $selectedTab) {
-                    Label("Home", systemImage: "house.fill")
-                }
-                NavigationLink(destination: StatisticsScreen(), tag: Tab.statistics, selection: $selectedTab) {
-                    Label("Statistics", systemImage: "chart.pie")
-                }
-                NavigationLink(destination: ProfileScreen(), tag: Tab.profile, selection: $selectedTab) {
-                    Label("Profile", systemImage: "person.crop.circle")
-                }
-            }
-            .listStyle(SidebarListStyle())
-            .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
-            .accentColor(Color.blue) // Customize the sidebar color
-            
-            content
-        }
-        .navigationTitle("Money Genius")
+                   List {
+                       TabButton(title: "Home", imageName: "house.fill", tab: .home, selectedTab: $selectedTab)
+                       TabButton(title: "Statistics", imageName: "chart.pie", tab: .statistics, selectedTab: $selectedTab)
+                       TabButton(title: "Profile", imageName: "person.crop.circle", tab: .profile, selectedTab: $selectedTab)
+                   }
+                   .listStyle(SidebarListStyle())
+                   .accentColor(Color(hex: "031C77"))
+                   .background(Color(hex: "031C77"))
+                   .navigationTitle("Money Genius")
+                   .onAppear {
+                       DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                           selectedTab = initialSelection
+                       }
+                   }
+
+                   content
+               }
+        
 
         #endif
     }
@@ -78,6 +79,53 @@ struct HomeScreen: View {
             Text("Select a tab")
         }
     }
+    struct TabButton: View {
+        let title: String
+        let imageName: String
+        let tab: HomeScreen.Tab
+        @Binding var selectedTab: HomeScreen.Tab?
+
+        var body: some View {
+            Button(action: {
+                selectedTab = tab
+            }) {
+                VStack(spacing: 0) {
+                    ZStack(alignment: .leading) {
+                        if selectedTab == tab {
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundColor(.white)
+                                .frame(height: 24)
+                                .alignmentGuide(.leading, computeValue: { _ in 0 })
+                        }
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(selectedTab == tab ? Color.white : Color(hex: "031C77"))
+                            .frame(height: 24)
+                            .opacity(selectedTab != tab ? 0 : 1)
+                            .alignmentGuide(.leading, computeValue: { _ in 0 })
+                        Label(title, systemImage: imageName)
+                            .padding(.leading, 10)
+                            .alignmentGuide(.leading, computeValue: { _ in 0 })
+                    }
+                    .overlay(
+                        Rectangle()
+                            .fill(Color.clear)
+                            .contentShape(Rectangle())
+                    )
+                }
+            }
+            .buttonStyle(PlainButtonStyle())
+            .foregroundColor(selectedTab == tab ? .black : .primary)
+        }
+    }
+
+
+
+
+
+
+
+
+
 }
 
 
