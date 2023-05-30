@@ -22,51 +22,71 @@ struct MainScreen: View {
     var body: some View {
         NavigationStack(path: $path){
             VStack{
-//
-//                TextField("Enter transaction name", text: $viewModel.name)
-//                TextField("Enter transaction amount", text:Binding(
-//                    get: { String(viewModel.amount) },
-//                    set: {
-//                        if let val = Int($0)  {
-//                            viewModel.amount = val
-//                        } else {
-//                            viewModel.amount = 0
-//                        }
-//
-//
-//                    }
-//                )).keyboardType(.numberPad)
-//
-//                Button("Insert"){
-//                    viewModel.insert()
-//                    viewModel.getAllTransaction()
-//                }
-//
-//                Text(String(viewModel.getTotalSum())).font(.system(size: 35))
-//
-//                List{
-//                    ForEach(viewModel.transactions, id: \.id){ trans in
-//                        VStack{
-//                            Text(trans.name)
-//                            Text(String(trans.amount))
-//                        }
-//                    }.onDelete(perform: deleteTransaction)
-//
-//                }
+                HStack {
+                    CImage(image: Image("Ellipse"))
+                        .frame(width: 56, height: 56)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Welcome back,")
+                            .foregroundColor(.gray)
+                            .font(.custom("Inter", size: 12))
+                        Text("Bryan")
+                            .foregroundColor(.black)
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.leading,8)
+                    Spacer()
+                    
+                    
+                }
+                .padding(.horizontal, 32)
                 
-                Button("to budget screen"){
-                    path.append("budgetscreen")
+                ZStack {
+                    
+                    Image("Card")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 400, height: 300)
+                    
+                    VStack(alignment: .leading){
+                        Text("Balance")
+                            .foregroundColor(.gray)
+                            .font(.custom("Inter-Bold", size: 20))
+                        
+                        HStack {
+                            Text("Rp")
+                                .foregroundColor(.white)
+                                .font(.custom("Inter", size: 24))
+                            
+                            Text("100000")
+                                .foregroundColor(.white)
+                                .font(.custom("Inter", size: 24))
+                        }
+                    }
+                    .padding(.top,-64)
+                    .padding(.leading,-120)
+                    
+                    
                 }
                 
-                Button("to transaction screen"){
-                    path.append("transactionscreen")
-                }
+                VStack{
+                    HStack{
+                        MainScreenBlock(image:"Send", text: "Transactions", desc: "Income & Outcome").onTapGesture{
+                            path.append("transactionscreen")
+                        }
+                        MainScreenBlock(image:"Wallet", text: "Goals", desc: "Your Goals")
+                    }
+                    HStack{
+                        MainScreenBlock(image:"3 User", text: "Reminder", desc: "Set Your Reminder")
+                        MainScreenBlock(image:"Dolar", text: "Set Budget", desc: "Set Your Budget").onTapGesture{
+                            path.append("budgetscreen")
+                        }
+                    }
+                }.padding(.top,-80)
                 
                 
                 
-            }.onAppear{
-//                viewModel.getAllTransaction()
-//                viewModel.getSumOfTransactionByCatId()
+                
             }.navigationDestination(for: String.self) { view in
                 if view == "budgetscreen" {
                     

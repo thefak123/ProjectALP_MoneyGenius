@@ -19,11 +19,9 @@ struct AddTransactionScreen: View {
             Menu {
                 ForEach(viewModel.categories, id: \.id) {cat in
                     Button {
-                        
                         viewModel.category = cat
                     } label: {
                         Text(cat.name)
-                        
                     }
                 }
                 

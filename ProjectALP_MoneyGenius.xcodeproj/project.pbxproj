@@ -11,6 +11,8 @@
 		04292FDD2A2495ED000DE0E1 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */; };
 		04292FE02A249F30000DE0E1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDF2A249F30000DE0E1 /* DateExtension.swift */; };
 		04292FE42A24D623000DE0E1 /* TransactionCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */; };
+		04292FE62A2590C4000DE0E1 /* MainScreenBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FE52A2590C4000DE0E1 /* MainScreenBlock.swift */; };
+		04292FE82A25926C000DE0E1 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FE72A25926C000DE0E1 /* CircleImage.swift */; };
 		0448A4062A20F9C700997EBB /* TransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A4052A20F9C700997EBB /* TransactionScreen.swift */; };
 		0448A4082A20FE1700997EBB /* AddTransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A4072A20FE1600997EBB /* AddTransactionScreen.swift */; };
 		0448A40A2A20FEC300997EBB /* TextInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A4092A20FEC300997EBB /* TextInputComponent.swift */; };
@@ -60,6 +62,8 @@
 		04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		04292FDF2A249F30000DE0E1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardComponent.swift; sourceTree = "<group>"; };
+		04292FE52A2590C4000DE0E1 /* MainScreenBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenBlock.swift; sourceTree = "<group>"; };
+		04292FE72A25926C000DE0E1 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		0448A4052A20F9C700997EBB /* TransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionScreen.swift; sourceTree = "<group>"; };
 		0448A4072A20FE1600997EBB /* AddTransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionScreen.swift; sourceTree = "<group>"; };
 		0448A4092A20FEC300997EBB /* TextInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputComponent.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */,
 				0448A4092A20FEC300997EBB /* TextInputComponent.swift */,
 				04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */,
+				04292FE52A2590C4000DE0E1 /* MainScreenBlock.swift */,
+				04292FE72A25926C000DE0E1 /* CircleImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				0496DA322A1DA0EC00F3CF2B /* ProgressBarComponent.swift in Sources */,
 				04B24F992A218FC50031D865 /* MainViewModel.swift in Sources */,
 				0496DA3C2A1E4B1300F3CF2B /* CategoryStruct.swift in Sources */,
+				04292FE62A2590C4000DE0E1 /* MainScreenBlock.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
 				04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */,
 				04292FE42A24D623000DE0E1 /* TransactionCardComponent.swift in Sources */,
@@ -380,6 +387,7 @@
 				04C512B12A16575A00CC75F9 /* CoreDataManager.swift in Sources */,
 				0448A4062A20F9C700997EBB /* TransactionScreen.swift in Sources */,
 				04EBC49C2A130E5F006F85F4 /* Persistence.swift in Sources */,
+				04292FE82A25926C000DE0E1 /* CircleImage.swift in Sources */,
 				0496DA362A1E0AA000F3CF2B /* AddBudgetScreen.swift in Sources */,
 				04EBC49F2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */,
 				0448A40A2A20FEC300997EBB /* TextInputComponent.swift in Sources */,
