@@ -14,7 +14,7 @@ struct StatisticsScreen: View {
     
 
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .center){
             Chart {
                 ForEach(viewModel.data, id: \.type) { element in
                     ForEach(element.data) { data in
@@ -22,6 +22,10 @@ struct StatisticsScreen: View {
                         
                     }.foregroundStyle(by: .value("Type", element.type)).position(by: .value("Type", element.type))
                 }
+            }.frame(height: UIScreen.main.bounds.height / 4)
+            HStack(alignment: .center){
+                MainScreenBlock(image: "square.and.arrow.down", text: "Rp. \(viewModel.totalIncome)", desc: "Income", systemName: true)
+                MainScreenBlock(image: "square.and.arrow.up", text: "Rp. \(viewModel.totalExpense)", desc: "Outcome", systemName: true)
             }.frame(height: UIScreen.main.bounds.height / 4)
             Text("Latest Transaction").font(.title).fontWeight(.bold).padding([.top, .bottom], 20)
                 Divider()
@@ -35,6 +39,8 @@ struct StatisticsScreen: View {
         }.padding(20).onAppear{
             viewModel.getSumTransactionByMonth()
             viewModel.getLatestTransaction(n: 5)
+            viewModel.getTotalExpenseTransaction()
+            viewModel.getTotalIncomeTranasaction()
         }
     }
 }

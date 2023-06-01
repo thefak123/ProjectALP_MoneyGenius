@@ -230,6 +230,30 @@ class CoreDataManager{
         }
     }
     
+    func getSumTransaction(type : String) -> Int{
+        let request : NSFetchRequest<Transaction> = Transaction.fetchRequest()
+        request.predicate = NSPredicate(format: "category.type == %@", type)
+        request.resultType = .dictionaryResultType
+        let sumExpression = NSExpressionDescription()
+        sumExpression.name = "sumAmount"
+        sumExpression.expression = NSExpression(forFunction: "sum:", arguments: [NSExpression(forKeyPath: "amount")])
+        sumExpression.expressionResultType = .doubleAttributeType
+        
+        request.propertiesToFetch = [sumExpression]
+        do{
+            let results = try viewContext.fetch(request) as! [NSDictionary]
+            
+            // Access the aggregated value
+            if let totalQuantity = results.first?["sumAmount"] as? Int {
+                return totalQuantity
+            }
+        }catch{
+            print("There is some error : \(error)")
+            
+        }
+        return 0
+    }
+    
     func getSumExpenseTransactionByCategoryName(category_name : String) -> Int{
         let request : NSFetchRequest<Transaction> = Transaction.fetchRequest()
         request.predicate = NSPredicate(format: "category.name == %@", category_name)
@@ -419,6 +443,6 @@ class CoreDataManager{
     func deleteTrancaction(trans : Transaction){
         viewContext.delete(trans)
         
-        try? viewContext.save() 
+        try? viewContext.save()
     }
 }

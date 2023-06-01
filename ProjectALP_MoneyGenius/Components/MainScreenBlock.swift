@@ -11,6 +11,9 @@ struct MainScreenBlock: View {
     var image : String
     var text : String
     var desc : String
+    var systemName : Bool = false
+    
+    
     
     var body: some View {
         
@@ -20,17 +23,23 @@ struct MainScreenBlock: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.black.opacity(0.5), lineWidth: 1)
-                    )
-                    .frame(width:156, height: 156)
+                    ).frame(width:156, height: 156)
+                    
                 
                 VStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color.blue.opacity(0.2))
-                            .frame(width: 48, height: 48)
-                        Image(image)
-                            .resizable()
-                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color.blue.opacity(0.2)).frame(width: 48, height: 48)
+                        
+                        if systemName {
+                            Image(systemName: image)
+                                .resizable().frame(width: 24, height: 24)
+                              
+                        }else{
+                            Image(image)
+                                .resizable().frame(width: 24, height: 24)
+                                
+                        }
                     }
                     .padding(.top,4)
                     .padding(.leading,12)
@@ -47,7 +56,7 @@ struct MainScreenBlock: View {
                 }
                 
             
-        }
+            }
     }
 }
 

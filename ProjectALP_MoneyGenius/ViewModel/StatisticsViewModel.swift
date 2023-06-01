@@ -12,6 +12,9 @@ class StatisticsViewModel : ObservableObject{
     let coreDataManager = CoreDataManager.shared
     @Published var data : [(type: String, data: [ChartInfoStruct])] = []
     @Published var latestTransaction : [TransactionStruct] = []
+    @Published var totalExpense : Int = 0
+    @Published var totalIncome : Int = 0
+
     
     func getSumTransactionByMonth(){
        
@@ -24,5 +27,13 @@ class StatisticsViewModel : ObservableObject{
     
     func getLatestTransaction(n : Int){
         latestTransaction = coreDataManager.getLatestTransaction(n: n).map(TransactionStruct.init)
+    }
+    
+    func getTotalExpenseTransaction(){
+        totalExpense  = coreDataManager.getSumTransaction(type: "expense")
+    }
+    
+    func getTotalIncomeTranasaction(){
+        totalIncome = coreDataManager.getSumTransaction(type: "income")
     }
 }
