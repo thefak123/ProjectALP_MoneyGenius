@@ -12,12 +12,21 @@ class MainViewModel : ObservableObject{
     var name : String = ""
     var amount : Int = 0
     var type : String = ""
+    @Published var saldo : Int = 0
     
     @Published var transactions : [TransactionStruct] = []
     let coreDataManager = CoreDataManager.shared
     
     func getAllTransaction() {
         transactions = coreDataManager.getAllTransaction().map(TransactionStruct.init)
+    }
+    
+    func getBalanceUser(){
+        saldo = coreDataManager.getTotalBalanceUser()
+    }
+    
+    func removeAllCategories(){
+        coreDataManager.deleteAllCategories()
     }
     
     func deleteTransaction(index : Int){

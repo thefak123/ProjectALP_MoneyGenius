@@ -11,6 +11,7 @@ struct SetUpScreen: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var email: String = ""
+    @State private var image : String = ""
     
     var body: some View {
         VStack {

@@ -24,6 +24,7 @@ struct HomeScreen: View {
                 Text("Profile")
             }
         }.onAppear{
+            viewModel.setDefaultCategories()
         }
     }
 }

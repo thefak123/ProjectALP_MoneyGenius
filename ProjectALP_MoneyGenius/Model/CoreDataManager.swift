@@ -24,19 +24,33 @@ class CoreDataManager{
         }
     }
     
+    // User Area
+    func getTotalBalanceUser() -> Int{
+        let income = getSumTransaction(type: "income")
+        let outcome = getSumTransaction(type: "expense")
+        return income - outcome
+    }
+    
+    
     // Category Area
     func fillTheDefaultCategories(){
-        self.deleteAllCategories()
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
+        let data = getAllCategories(type: "income")
+        if data.count == 0{
+            setDefaultCategories()
+        }
+        
+    }
+    
+    
+    
+    func setDefaultCategories(){
         let allIncomeCategories = ["Main job", "Investment", "Side hustle", "Others"]
         let allExpensesCategories = ["Groceries", "Food or drink", "Job Expenses", "Utillities", "Entertaiment", "Insurance", "Others"]
-        let count = checkIfCategoryExist(request: request)
-        if count == 0{
             for category in allIncomeCategories {
-                
-                
-                
-                
+
+
+
+
                 // no matching object
                 let newCategory = Category(context: viewContext)
                 newCategory.name = category
@@ -46,17 +60,17 @@ class CoreDataManager{
                 }catch{
                     print("There is some error : \(error)")
                 }
-                
-                
-                
+
+
+
             }
-            
-            
-            
+
+
+
             for category in allExpensesCategories {
-                
-                
-                
+
+
+
                 // no matching object
                 let newCategory = Category(context: viewContext)
                 newCategory.name = category
@@ -66,25 +80,14 @@ class CoreDataManager{
                 }catch{
                     print("There is some error : \(error)")
                 }
-                
-                
-                
-            }
-        }
-        
-    }
-    
-    func checkIfCategoryExist(request : NSFetchRequest<any NSFetchRequestResult>) -> Int{
-        
-        var count = 0
-        do{
-            count = try viewContext.count(for: request)
-        }catch let error as NSError{
+
+
+
             
         }
-        return count
-        
     }
+    
+    
     
     func getSumOfAllCategories(){
         // Create fetch request

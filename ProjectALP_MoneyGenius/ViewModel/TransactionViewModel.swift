@@ -22,6 +22,14 @@ class TransactionViewModel : ObservableObject{
         
     }
     
+    func deleteAllCategories(){
+        coreDataManager.deleteAllCategories()
+    }
+    
+    func setDefaultCategories(){
+        coreDataManager.setDefaultCategories()
+    }
+    
     func updateTransaction(id : NSManagedObjectID){
         if category != nil{
             coreDataManager.updateTransaction(id: id, type: type, amount: Int64(amount) ?? 0, note: note, category_name: category?.name ?? "", category_type: category?.type ?? "")

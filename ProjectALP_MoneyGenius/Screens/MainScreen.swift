@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainScreen: View {
-    @StateObject private var viewModel = TransactionViewModel()
+    @StateObject private var viewModel = MainViewModel()
     
     @State var path = NavigationPath()
     func deleteTransaction(offsets : IndexSet){
@@ -66,7 +66,7 @@ struct MainScreen: View {
                                     .foregroundColor(.white)
                                     .font(.custom("Inter", size: 24))
                                 
-                                Text("100000")
+                                Text(String(viewModel.saldo))
                                     .foregroundColor(.white)
                                     .font(.custom("Inter", size: 24))
                             }
@@ -90,7 +90,9 @@ struct MainScreen: View {
                                 path.append("budgetscreen")
                             }
                         }
-                    }.padding(.top,-80)
+                    }.padding(.top,-80).onAppear{
+                        viewModel.getBalanceUser()
+                    }
                     
                     
                     
