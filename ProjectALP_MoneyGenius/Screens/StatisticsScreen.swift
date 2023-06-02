@@ -10,11 +10,11 @@ import Charts
 
 struct StatisticsScreen: View {
     @StateObject var viewModel = StatisticsViewModel()
-    
-    
+    @State var refresher : Bool = false
 
     var body: some View {
         VStack(alignment: .center){
+            
             Chart {
                 ForEach(viewModel.data, id: \.type) { element in
                     ForEach(element.data) { data in
@@ -41,6 +41,7 @@ struct StatisticsScreen: View {
             viewModel.getLatestTransaction(n: 5)
             viewModel.getTotalExpenseTransaction()
             viewModel.getTotalIncomeTranasaction()
+            print("hi bro")
         }
     }
 }

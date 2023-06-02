@@ -24,6 +24,16 @@ class BudgetViewModel : ObservableObject{
         print(categories)
     }
     
+    func deleteBudget(index : Int){
+        let budget = coreDataManager.getBudgetById(id: budgets[index].budget.objectID)
+        coreDataManager.deleteBudget(budget: budget!)
+        self.getAllBudgetInfo()
+    }
+    
+    func deleteAllBudget(){
+        coreDataManager.deleteAllBudgets()
+    }
+    
     
     
     func insertNewBudget(){

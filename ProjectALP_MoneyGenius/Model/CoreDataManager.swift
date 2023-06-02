@@ -175,6 +175,7 @@ class CoreDataManager{
         let category = Category(context: viewContext)
         category.name = category_name
         category.type = category_type
+        budget.category = category
         do{
             try viewContext.save()
         }catch{
@@ -203,14 +204,58 @@ class CoreDataManager{
         do{
             let result = try viewContext.fetch(request)
             for data in result {
+                print(data.category)
                 let value = getSumExpenseTransactionByCategoryName(category_name: data.category?.name ?? "")
-                let budgetinfo = BudgetInfoStruct(totalAmount: value, id: UUID(), category_name: data.category?.name ?? "", max_value: Int64(data.maxBudget))
+                let budgetinfo = BudgetInfoStruct(budget: data, totalAmount: value, id: UUID(), category_name: data.category?.name ?? "", max_value: Int64(data.maxBudget))
                 resultData.append(budgetinfo)
             }
             return resultData
         }catch{
             print("There is some error : \(error)")
             return []
+        }
+    }
+    
+    func getBudgetByCatName(name : String) -> Budget?{
+        let request : NSFetchRequest<Budget> = Budget.fetchRequest()
+        request.predicate = NSPredicate(format: "category.name == %@", name)
+        do{
+            
+            return try viewContext.fetch(request) as? Budget
+        }catch{
+            return nil
+        }
+           
+    }
+    
+    func getBudgetById(id : NSManagedObjectID) -> Budget?{
+        
+        do{
+            
+            return try viewContext.existingObject(with: id) as? Budget
+        }catch{
+            return nil
+        }
+           
+    }
+    
+    func deleteBudget(budget : Budget){
+        viewContext.delete(budget)
+        
+        try? viewContext.save()
+    }
+    
+    func deleteAllBudgets(){
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Budget")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do{
+            let results = try viewContext.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                viewContext.delete(objectData)
+            }
+        }catch{
+            
         }
     }
     

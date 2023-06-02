@@ -12,8 +12,10 @@ struct BudgetScreen: View {
     @State var maxValue: [Float] = [100, 100, 100, 100]
     @Binding var path : NavigationPath
     @StateObject private var viewModel = BudgetViewModel()
-    func deleteBudget(idx : IndexSet){
-        print(idx)
+    func deleteBudget(offsets : IndexSet){
+        offsets.forEach{ index in
+            viewModel.deleteBudget(index: index)
+        }
     }
     var body: some View {
         ZStack{
@@ -32,6 +34,7 @@ struct BudgetScreen: View {
             Spacer()
         }.padding(20).onAppear{
             viewModel.getAllBudgetInfo()
+            viewModel.deleteAllBudget()
         }
         
     }

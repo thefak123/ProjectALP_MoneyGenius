@@ -8,6 +8,7 @@
 import Foundation
 
 struct BudgetInfoStruct{
+    var budget : Budget
     var totalAmount : Int
     var id : UUID
     var category_name : String
