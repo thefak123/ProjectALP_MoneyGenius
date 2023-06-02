@@ -18,12 +18,6 @@
 		0448A40A2A20FEC300997EBB /* TextInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A4092A20FEC300997EBB /* TextInputComponent.swift */; };
 		047DFF3E2A29CB2700D7E8B2 /* MacMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DFF3D2A29CB2700D7E8B2 /* MacMainScreen.swift */; };
 		047DFF402A29CBB700D7E8B2 /* IpadMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DFF3F2A29CBB700D7E8B2 /* IpadMainScreen.swift */; };
-		047DFF482A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DFF472A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_MacApp.swift */; };
-		047DFF4A2A2A11AB00D7E8B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DFF492A2A11AB00D7E8B2 /* ContentView.swift */; };
-		047DFF4C2A2A11AD00D7E8B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DFF4B2A2A11AD00D7E8B2 /* Assets.xcassets */; };
-		047DFF4F2A2A11AD00D7E8B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DFF4E2A2A11AD00D7E8B2 /* Preview Assets.xcassets */; };
-		047DFF512A2A11AD00D7E8B2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DFF502A2A11AD00D7E8B2 /* Persistence.swift */; };
-		047DFF542A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 047DFF522A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodeld */; };
 		047DFF592A2A13EF00D7E8B2 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA312A1DA0EC00F3CF2B /* ProgressBarComponent.swift */; };
 		047DFF5A2A2A13F900D7E8B2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC4D92A2323C700C6E728 /* Profile.swift */; };
 		047DFF5B2A2A13F900D7E8B2 /* BudgetStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496DA3D2A1F058A00F3CF2B /* BudgetStruct.swift */; };
@@ -111,13 +105,6 @@
 		047DFF3D2A29CB2700D7E8B2 /* MacMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMainScreen.swift; sourceTree = "<group>"; };
 		047DFF3F2A29CBB700D7E8B2 /* IpadMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadMainScreen.swift; sourceTree = "<group>"; };
 		047DFF452A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectALP_MoneyGenius_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		047DFF472A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectALP_MoneyGenius_MacApp.swift; sourceTree = "<group>"; };
-		047DFF492A2A11AB00D7E8B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		047DFF4B2A2A11AD00D7E8B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		047DFF4E2A2A11AD00D7E8B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		047DFF502A2A11AD00D7E8B2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		047DFF532A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectALP_MoneyGenius_Mac.xcdatamodel; sourceTree = "<group>"; };
-		047DFF552A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectALP_MoneyGenius_Mac.entitlements; sourceTree = "<group>"; };
 		048FC4D72A2322D300C6E728 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		048FC4D92A2323C700C6E728 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		048FC4DB2A23246A00C6E728 /* ProfileSettView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettView.swift; sourceTree = "<group>"; };
@@ -201,28 +188,6 @@
 				047DFF3D2A29CB2700D7E8B2 /* MacMainScreen.swift */,
 			);
 			path = mac;
-			sourceTree = "<group>";
-		};
-		047DFF462A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_Mac */ = {
-			isa = PBXGroup;
-			children = (
-				047DFF472A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_MacApp.swift */,
-				047DFF492A2A11AB00D7E8B2 /* ContentView.swift */,
-				047DFF4B2A2A11AD00D7E8B2 /* Assets.xcassets */,
-				047DFF502A2A11AD00D7E8B2 /* Persistence.swift */,
-				047DFF552A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.entitlements */,
-				047DFF522A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodeld */,
-				047DFF4D2A2A11AD00D7E8B2 /* Preview Content */,
-			);
-			path = ProjectALP_MoneyGenius_Mac;
-			sourceTree = "<group>";
-		};
-		047DFF4D2A2A11AD00D7E8B2 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				047DFF4E2A2A11AD00D7E8B2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		048FC4DD2A2325B900C6E728 /* ProfileScreen */ = {
@@ -318,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				04EBC4912A130E5E006F85F4 /* ProjectALP_MoneyGenius */,
-				047DFF462A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_Mac */,
 				04EBC4902A130E5E006F85F4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -463,11 +427,9 @@
 			files = (
 				047DFF692A2A141200D7E8B2 /* Inter-Light.ttf in Resources */,
 				047DFF682A2A141200D7E8B2 /* Inter-Medium.ttf in Resources */,
-				047DFF4F2A2A11AD00D7E8B2 /* Preview Assets.xcassets in Resources */,
 				047DFF6D2A2A141200D7E8B2 /* Inter-SemiBold.ttf in Resources */,
 				047DFF6B2A2A141200D7E8B2 /* Inter-Bold.ttf in Resources */,
 				047DFF672A2A141200D7E8B2 /* Inter-Black.ttf in Resources */,
-				047DFF4C2A2A11AD00D7E8B2 /* Assets.xcassets in Resources */,
 				047DFF6C2A2A141200D7E8B2 /* Inter-Regular.ttf in Resources */,
 				047DFF6A2A2A141200D7E8B2 /* Inter-ExtraBold.ttf in Resources */,
 			);
@@ -507,19 +469,15 @@
 				047DFF712A2A141E00D7E8B2 /* SplashScreen.swift in Sources */,
 				047DFF5A2A2A13F900D7E8B2 /* Profile.swift in Sources */,
 				047DFF652A2A140600D7E8B2 /* BudgetViewModel.swift in Sources */,
-				047DFF512A2A11AD00D7E8B2 /* Persistence.swift in Sources */,
 				047DFF5E2A2A13F900D7E8B2 /* Transaction.swift in Sources */,
 				047DFF622A2A140600D7E8B2 /* MainViewModel.swift in Sources */,
 				047DFF742A2A141E00D7E8B2 /* MainScreen.swift in Sources */,
 				047DFF632A2A140600D7E8B2 /* StatisticsViewModel.swift in Sources */,
 				047DFF602A2A140200D7E8B2 /* CoreDataManager.swift in Sources */,
-				047DFF542A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodeld in Sources */,
-				047DFF4A2A2A11AB00D7E8B2 /* ContentView.swift in Sources */,
 				047DFF732A2A141E00D7E8B2 /* TransactionScreen.swift in Sources */,
 				047DFF6F2A2A141A00D7E8B2 /* IpadMainScreen.swift in Sources */,
 				047DFF5C2A2A13F900D7E8B2 /* BudgetInfoStruct.swift in Sources */,
 				047DFF6E2A2A141700D7E8B2 /* MacMainScreen.swift in Sources */,
-				047DFF482A2A11AB00D7E8B2 /* ProjectALP_MoneyGenius_MacApp.swift in Sources */,
 				047DFF752A2A141E00D7E8B2 /* BudgetScreen.swift in Sources */,
 				047DFF762A2A141E00D7E8B2 /* HomeScreen.swift in Sources */,
 				047DFF642A2A140600D7E8B2 /* ProfileViewModel.swift in Sources */,
@@ -777,7 +735,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ucexerciseweek.ProjectALP-MoneyGenius";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -811,7 +769,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ucexerciseweek.ProjectALP-MoneyGenius";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -852,16 +810,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		047DFF522A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				047DFF532A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodel */,
-			);
-			currentVersion = 047DFF532A2A11AD00D7E8B2 /* ProjectALP_MoneyGenius_Mac.xcdatamodel */;
-			path = ProjectALP_MoneyGenius_Mac.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		04EBC49D2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
