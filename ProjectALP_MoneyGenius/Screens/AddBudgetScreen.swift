@@ -38,11 +38,11 @@ struct AddBudgetScreen: View {
                 Text("Max Budget")
                 TextField("Enter max budget", text: $viewModel.maxBudget).textFieldStyle(.roundedBorder).padding(.bottom, 10)
                 
-                DatePicker(selection: $viewModel.startDate, in: ...Date.now, displayedComponents: .date) {
+                DatePicker(selection: $viewModel.startDate, in: Date.now..., displayedComponents: .date) {
                                 Text("Select initial date")
                 }.padding(.bottom, 10)
                 
-                DatePicker(selection: $viewModel.endDate, in: ...Date.now, displayedComponents: .date) {
+                DatePicker(selection: $viewModel.endDate, in: Date.now..., displayedComponents: .date) {
                                Text("Select end date")
                 }.padding(.bottom, 10)
                 

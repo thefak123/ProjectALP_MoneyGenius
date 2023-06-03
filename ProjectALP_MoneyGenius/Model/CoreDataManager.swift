@@ -197,14 +197,20 @@ class CoreDataManager{
     }
     
     func getAllBudgetInfo() -> [BudgetInfoStruct]{
+        
         let request : NSFetchRequest<Budget> = Budget.fetchRequest()
-        var resultData : [BudgetInfoStruct] = []
 
+        // Get today's beginning & end
+        var resultData : [BudgetInfoStruct] = []
+        
+         
+            
+        let datePredicate = NSPredicate(format: "(%@ >= startDate) AND (%@ <= endDate)", NSDate(), NSDate())
+        request.predicate = datePredicate
         
         do{
             let result = try viewContext.fetch(request)
             for data in result {
-                print(data.category)
                 let value = getSumExpenseTransactionByCategoryName(category_name: data.category?.name ?? "")
                 let budgetinfo = BudgetInfoStruct(budget: data, totalAmount: value, id: UUID(), category_name: data.category?.name ?? "", max_value: Int64(data.maxBudget))
                 resultData.append(budgetinfo)

@@ -41,7 +41,6 @@ struct StatisticsScreen: View {
             viewModel.getLatestTransaction(n: 5)
             viewModel.getTotalExpenseTransaction()
             viewModel.getTotalIncomeTranasaction()
-            print("hi bro")
         }
     }
 }
