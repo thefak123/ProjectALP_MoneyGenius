@@ -10,7 +10,8 @@ import SwiftUI
 struct ReminderCardComponent: View {
     @Binding var reminder: ReminderStruct
     @Binding var path: NavigationPath
-    
+    @EnvironmentObject var viewModel: ReminderViewModel
+
     var body: some View {
         ZStack(alignment: .trailing) {
             HStack {
@@ -23,21 +24,26 @@ struct ReminderCardComponent: View {
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
-                
+
                 Spacer()
             }
             .contentShape(Rectangle())
             .onTapGesture {
                 path.append(reminder)
             }
-            
+
             Toggle("", isOn: $reminder.active)
                 .toggleStyle(SwitchToggleStyle(tint: .green))
                 .onTapGesture {
-                   
+                    if reminder.active {
+                        viewModel.scheduleNotification(for: reminder)
+                    } else {
+                        viewModel.removePendingNotification(for: reminder)
+                    }
                 }
         }
     }
+
     
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()

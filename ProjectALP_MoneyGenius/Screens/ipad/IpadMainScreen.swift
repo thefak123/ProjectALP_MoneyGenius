@@ -60,7 +60,7 @@ struct IpadMainScreen: View {
                     
                 }
                 VStack(spacing: 16){
-                    HStack(spacing: 16){
+                    HStack(spacing: 48){
                         Button(action: {
                             // Action for the first button
                         }) {

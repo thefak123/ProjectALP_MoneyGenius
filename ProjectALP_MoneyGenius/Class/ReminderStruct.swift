@@ -15,6 +15,7 @@ struct ReminderStruct: Hashable {
         return reminder.objectID
     }
     
+    
     var date: Date {
         get {
             reminder.date ?? Date()
@@ -51,4 +52,3 @@ struct ReminderStruct: Hashable {
         }
     }
 }
-

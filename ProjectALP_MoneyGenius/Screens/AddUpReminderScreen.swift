@@ -72,6 +72,7 @@ struct AddUpReminderScreen: View {
         viewModel.name = name
         viewModel.note = note
         viewModel.date = date
+        viewModel.active = true
         viewModel.updateReminder(id: reminder.id)
     }
 

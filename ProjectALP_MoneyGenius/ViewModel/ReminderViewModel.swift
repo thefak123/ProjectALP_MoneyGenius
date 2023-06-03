@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UserNotifications
 
 class ReminderViewModel: ObservableObject {
     var name: String = ""
@@ -45,4 +46,36 @@ class ReminderViewModel: ObservableObject {
     func removeAllReminders() {
         coreDataManager.removeAllReminders()
     }
+
+    func scheduleNotification(for reminder: ReminderStruct) {
+            // Buat content notifikasi
+            let content = UNMutableNotificationContent()
+            content.title = "Reminder: \(reminder.name)"
+            content.body = reminder.note
+            content.sound = UNNotificationSound.default
+
+            // Buat trigger notifikasi berdasarkan waktu
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: reminder.date)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+
+            // Buat request notifikasi
+            let request = UNNotificationRequest(identifier: reminder.id.uriRepresentation().absoluteString, content: content, trigger: trigger)
+
+            // Jadwalkan notifikasi
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error scheduling notification: \(error.localizedDescription)")
+                } else {
+                    print("Notification scheduled successfully")
+                }
+            }
+        }
+    func removePendingNotification(for reminder: ReminderStruct) {
+            let identifier = reminder.id.uriRepresentation().absoluteString
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+        }
+
+
+
 }
