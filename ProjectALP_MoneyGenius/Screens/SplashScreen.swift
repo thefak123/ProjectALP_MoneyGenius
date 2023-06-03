@@ -11,12 +11,18 @@ import SwiftUI
 
 struct SplashScreen: View {
     var body: some View {
-        VStack{
+        ZStack {
+            Rectangle()
+                .ignoresSafeArea()
+                .foregroundColor(.white)
             
-            Image("logo")
-            Text("Money Genius").font(.custom("Inter-Bold", size: 36)).foregroundColor(Color(hex:0xf004AAD))
+            VStack {
+                Image("logo")
+                Text("Money Genius")
+                    .font(.custom("Inter-Bold", size: 36))
+                    .foregroundColor(Color(hex: 0xf004AAD))
+            }
         }
-        
     }
 }
 

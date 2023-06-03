@@ -31,6 +31,10 @@ class ReminderViewModel: ObservableObject {
         coreDataManager.deleteReminder(reminder: reminder!)
         getAllReminders()
     }
+    func deleteReminderDetail(id: NSManagedObjectID) {
+            coreDataManager.deleteReminderDetail(id: id)
+            getAllReminders()
+        }
     
     func emptyAllVariables() {
         name = ""

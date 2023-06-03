@@ -10,38 +10,55 @@ import SwiftUI
 struct ReminderScreen: View {
     @StateObject var viewModel = ReminderViewModel()
     @Binding var path: NavigationPath
-    
+   
     func deleteReminder(offsets: IndexSet) {
         offsets.forEach { index in
             viewModel.deleteReminder(index: index)
         }
     }
-    
+
     var body: some View {
-        List {
-            Section {
-                HStack {
-                    Text("Reminders")
-                    Spacer()
-                    Image(systemName: "plus")
-                        .onTapGesture {
-                            path.append("addupreminderscreen")
-                        }
+        ZStack(alignment: .top) {
+            Color.white.edgesIgnoringSafeArea(.all)
+            
+            List {
+                Section {
+                    HStack {
+                        Text("Reminders")
+                        Spacer()
+                        Image(systemName: "plus")
+                            .onTapGesture {
+                                path.append("addupreminderscreen")
+                            }
+                    }
+                    ForEach(viewModel.reminders, id: \.id) { reminder in
+                        ReminderCardComponent(reminder: binding(for: reminder), path: $path)
+                            .onTapGesture {
+                                path.append(reminder)
+                            }
+                    }
+                    .onDelete(perform: deleteReminder)
                 }
-                ForEach(viewModel.reminders, id: \.id) { reminder in
-                    ReminderCardComponent(reminder: binding(for: reminder), path: $path)
-                        .onTapGesture {
-                            path.append(reminder)
-                        }
-                }
-                .onDelete(perform: deleteReminder)
             }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text("Money Genius")
+                            .foregroundColor(Color.blue)
+                            .bold()
+                        
+                    }
+                }
+            }
+            
+           
         }
         .onAppear {
             viewModel.getAllReminders()
         }
+        .preferredColorScheme(.light)
     }
-    
+
     private func binding(for reminder: ReminderStruct) -> Binding<ReminderStruct> {
         guard let reminderIndex = viewModel.reminders.firstIndex(of: reminder) else {
             fatalError("Cannot find index for the reminder")
@@ -49,6 +66,7 @@ struct ReminderScreen: View {
         return $viewModel.reminders[reminderIndex]
     }
 }
+
 
 
 

@@ -14,7 +14,8 @@ struct AddUpReminderScreen: View {
     @State private var name: String = ""
     @State private var note: String = ""
     @State private var date: Date = Date()
-    
+    @State private var isUpdating: Bool = false
+
     var body: some View {
         VStack(alignment: .leading) {
             TextInputComponent(label: "Name", placeholder: "Name", value: $name)
@@ -47,13 +48,16 @@ struct AddUpReminderScreen: View {
             Spacer()
         }
         .padding(20)
+        .navigationBarItems(trailing: deleteButton)
         .onAppear {
             if let reminder = reminder {
                 name = reminder.name
                 note = reminder.note
                 date = reminder.date
+                isUpdating = true
             }
         }
+        .preferredColorScheme(.light)
     }
     
     private func addReminder() {
@@ -75,7 +79,30 @@ struct AddUpReminderScreen: View {
         viewModel.active = true
         viewModel.updateReminder(id: reminder.id)
     }
+    
+    private func deleteReminder() {
+        if isUpdating {
+            if let reminder = reminder {
+                viewModel.deleteReminderDetail(id: reminder.id)
+                path.removeLast()
+            }
+        }
+    }
 
+
+    private var deleteButton: some View {
+        if isUpdating {
+            return AnyView(
+                Button(action: {
+                    deleteReminder()
+                }) {
+                    Image(systemName: "trash")
+                }
+            )
+        } else {
+            return AnyView(EmptyView())
+        }
+    }
 }
 
 struct ReminderAddUpScreen_Previews: PreviewProvider {

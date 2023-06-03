@@ -597,7 +597,19 @@ class CoreDataManager{
             print("Error deleting reminder: \(error)")
         }
     }
-
+    
+    func deleteReminderDetail(id: NSManagedObjectID) {
+           if let reminder = getReminderById(id: id) {
+               viewContext.delete(reminder)
+               
+               do {
+                   try viewContext.save()
+                   print("Reminder deleted")
+               } catch {
+                   print("Error deleting reminder: \(error)")
+               }
+           }
+       }
     func addReminder(name: String, note: String, date: Date, active: Bool) {
         let reminder = Reminder(context: viewContext)
         reminder.name = name
