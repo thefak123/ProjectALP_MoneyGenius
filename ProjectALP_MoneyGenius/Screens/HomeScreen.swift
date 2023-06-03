@@ -34,9 +34,7 @@ struct HomeScreen: View {
                 }
                
             #else
-                if UIDevice.current.userInterfaceIdiom == .pad{
-                    
-                }else{
+                
                     TabView{
                         MainScreen().tabItem{
                             Image(systemName: "house.fill")
@@ -53,7 +51,7 @@ struct HomeScreen: View {
                     }.onAppear{
                         viewModel.setDefaultCategories()
                     }
-                }
+                
             #endif
         #endif
         
