@@ -221,8 +221,6 @@
 			children = (
 				04C512B22A16588900CC75F9 /* TransactionViewModel.swift */,
 				04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */,
-				04134D742A2B1E3D00E83964 /* AddUpReminderScreen.swift */,
-				04134D752A2B1E3D00E83964 /* ReminderScreen.swift */,
 				0496DA372A1E303000F3CF2B /* BudgetViewModel.swift */,
 				04B24F982A218FC50031D865 /* MainViewModel.swift */,
 				048FC4D72A2322D300C6E728 /* ProfileViewModel.swift */,
@@ -308,6 +306,8 @@
 				047DFF392A29CAD900D7E8B2 /* ipad */,
 				048FC4DD2A2325B900C6E728 /* ProfileScreen */,
 				04EBC4C52A163BAD006F85F4 /* SplashScreen.swift */,
+				04134D752A2B1E3D00E83964 /* ReminderScreen.swift */,
+				04134D742A2B1E3D00E83964 /* AddUpReminderScreen.swift */,
 				04C512922A163D2F00CC75F9 /* HomeScreen.swift */,
 				04C512A82A1645A200CC75F9 /* MainScreen.swift */,
 				04C512AA2A1645B100CC75F9 /* StatisticsScreen.swift */,
