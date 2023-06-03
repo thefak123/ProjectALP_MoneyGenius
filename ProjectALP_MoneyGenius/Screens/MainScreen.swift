@@ -85,7 +85,9 @@ struct MainScreen: View {
                             MainScreenBlock(image:"Wallet", text: "Goals", desc: "Your Goals")
                         }
                         HStack{
-                            MainScreenBlock(image:"3 User", text: "Reminder", desc: "Set Your Reminder")
+                            MainScreenBlock(image:"3 User", text: "Reminder", desc: "Set Your Reminder").onTapGesture {
+                                path.append("reminderscreen")
+                            }
                             MainScreenBlock(image:"Dolar", text: "Set Budget", desc: "Set Your Budget").onTapGesture{
                                 path.append("budgetscreen")
                             }
@@ -110,8 +112,14 @@ struct MainScreen: View {
                         AddTransactionScreen(type: "expense", path: $path)
                     }else if view == "addbudget"{
                         AddBudgetScreen(path: $path)
+                    }else if view == "reminderscreen" {
+                        ReminderScreen(path: $path)
+                    }else if view == "addupreminderscreen" {
+                        AddUpReminderScreen(path: $path)
                     }
                     
+                }.navigationDestination(for: ReminderStruct.self) { reminder in
+                    AddUpReminderScreen(reminder: reminder, path: $path)
                 }.navigationDestination(for: TransactionStruct.self){trans in
                     AddTransactionScreen(trans: trans,type:trans.categoryType, path: $path)
                     

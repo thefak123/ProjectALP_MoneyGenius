@@ -499,4 +499,74 @@ class CoreDataManager{
         
         try? viewContext.save()
     }
+    
+    //Reminder area
+    func getAllReminders() -> [Reminder] {
+        let request: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+        do {
+            return try viewContext.fetch(request)
+        } catch {
+            return []
+        }
+    }
+
+    func removeAllReminders() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Reminder")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try viewContext.execute(deleteRequest)
+            try viewContext.save()
+        } catch {
+            print("Error removing all reminders: \(error)")
+        }
+    }
+
+    func updateReminder(id: NSManagedObjectID, name: String, note: String, date: Date, active: Bool) {
+        let reminder = getReminderById(id: id)
+        reminder?.name = name
+        reminder?.note = note
+        reminder?.date = date
+        reminder?.active = active
+        
+        do {
+            try viewContext.save()
+            print("Reminder updated")
+        } catch {
+            print("Error updating reminder: \(error)")
+        }
+    }
+
+    func getReminderById(id: NSManagedObjectID) -> Reminder? {
+        do {
+            return try viewContext.existingObject(with: id) as? Reminder
+        } catch {
+            return nil
+        }
+    }
+
+    func deleteReminder(reminder: Reminder) {
+        viewContext.delete(reminder)
+        
+        do {
+            try viewContext.save()
+            print("Reminder deleted")
+        } catch {
+            print("Error deleting reminder: \(error)")
+        }
+    }
+
+    func addReminder(name: String, note: String, date: Date, active: Bool) {
+        let reminder = Reminder(context: viewContext)
+        reminder.name = name
+        reminder.note = note
+        reminder.date = date
+        reminder.active = active
+        
+        do {
+            try viewContext.save()
+            print("Reminder added")
+        } catch {
+            print("Error adding reminder: \(error)")
+        }
+    }
 }

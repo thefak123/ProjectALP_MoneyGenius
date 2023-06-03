@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04134D6F2A2B1E0300E83964 /* ReminderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D6E2A2B1E0300E83964 /* ReminderStruct.swift */; };
+		04134D712A2B1E1D00E83964 /* ReminderCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D702A2B1E1D00E83964 /* ReminderCardComponent.swift */; };
+		04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */; };
+		04134D762A2B1E3D00E83964 /* AddUpReminderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D742A2B1E3D00E83964 /* AddUpReminderScreen.swift */; };
+		04134D772A2B1E3D00E83964 /* ReminderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D752A2B1E3D00E83964 /* ReminderScreen.swift */; };
 		04292FD82A248344000DE0E1 /* ChartInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */; };
 		04292FDD2A2495ED000DE0E1 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */; };
 		04292FE02A249F30000DE0E1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDF2A249F30000DE0E1 /* DateExtension.swift */; };
@@ -60,6 +65,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04134D6E2A2B1E0300E83964 /* ReminderStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderStruct.swift; sourceTree = "<group>"; };
+		04134D702A2B1E1D00E83964 /* ReminderCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderCardComponent.swift; sourceTree = "<group>"; };
+		04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
+		04134D742A2B1E3D00E83964 /* AddUpReminderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUpReminderScreen.swift; sourceTree = "<group>"; };
+		04134D752A2B1E3D00E83964 /* ReminderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderScreen.swift; sourceTree = "<group>"; };
 		04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInfoStruct.swift; sourceTree = "<group>"; };
 		04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		04292FDF2A249F30000DE0E1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -167,6 +177,7 @@
 			children = (
 				0496DA312A1DA0EC00F3CF2B /* ProgressBarComponent.swift */,
 				0496DA332A1E098600F3CF2B /* FloatingActionButton.swift */,
+				04134D702A2B1E1D00E83964 /* ReminderCardComponent.swift */,
 				0448A4092A20FEC300997EBB /* TextInputComponent.swift */,
 				04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */,
 				04292FE52A2590C4000DE0E1 /* MainScreenBlock.swift */,
@@ -209,6 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				04C512B22A16588900CC75F9 /* TransactionViewModel.swift */,
+				04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */,
+				04134D742A2B1E3D00E83964 /* AddUpReminderScreen.swift */,
+				04134D752A2B1E3D00E83964 /* ReminderScreen.swift */,
 				0496DA372A1E303000F3CF2B /* BudgetViewModel.swift */,
 				04B24F982A218FC50031D865 /* MainViewModel.swift */,
 				048FC4D72A2322D300C6E728 /* ProfileViewModel.swift */,
@@ -233,6 +247,7 @@
 				04C512B52A1673BB00CC75F9 /* Transaction.swift */,
 				0496DA3D2A1F058A00F3CF2B /* BudgetStruct.swift */,
 				0496DA412A2060A200F3CF2B /* BudgetInfoStruct.swift */,
+				04134D6E2A2B1E0300E83964 /* ReminderStruct.swift */,
 				048FC4D92A2323C700C6E728 /* Profile.swift */,
 				04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */,
 			);
@@ -391,9 +406,11 @@
 				0496DA382A1E303000F3CF2B /* BudgetViewModel.swift in Sources */,
 				0496DA322A1DA0EC00F3CF2B /* ProgressBarComponent.swift in Sources */,
 				04B24F992A218FC50031D865 /* MainViewModel.swift in Sources */,
+				04134D712A2B1E1D00E83964 /* ReminderCardComponent.swift in Sources */,
 				0496DA3C2A1E4B1300F3CF2B /* CategoryStruct.swift in Sources */,
 				04292FE62A2590C4000DE0E1 /* MainScreenBlock.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
+				04134D772A2B1E3D00E83964 /* ReminderScreen.swift in Sources */,
 				04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */,
 				04292FE42A24D623000DE0E1 /* TransactionCardComponent.swift in Sources */,
 				04C512AB2A1645B100CC75F9 /* StatisticsScreen.swift in Sources */,
@@ -413,7 +430,10 @@
 				0448A4062A20F9C700997EBB /* TransactionScreen.swift in Sources */,
 				04EBC49C2A130E5F006F85F4 /* Persistence.swift in Sources */,
 				04292FE82A25926C000DE0E1 /* CircleImage.swift in Sources */,
+				04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */,
+				04134D762A2B1E3D00E83964 /* AddUpReminderScreen.swift in Sources */,
 				0496DA362A1E0AA000F3CF2B /* AddBudgetScreen.swift in Sources */,
+				04134D6F2A2B1E0300E83964 /* ReminderStruct.swift in Sources */,
 				04EBC49F2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */,
 				0448A40A2A20FEC300997EBB /* TextInputComponent.swift in Sources */,
 				048FC4EE2A235D7B00C6E728 /* SetUpScreen.swift in Sources */,
