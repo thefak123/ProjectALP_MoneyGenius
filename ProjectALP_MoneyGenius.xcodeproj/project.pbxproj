@@ -12,6 +12,11 @@
 		04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */; };
 		04134D762A2B1E3D00E83964 /* AddUpReminderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D742A2B1E3D00E83964 /* AddUpReminderScreen.swift */; };
 		04134D772A2B1E3D00E83964 /* ReminderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D752A2B1E3D00E83964 /* ReminderScreen.swift */; };
+		04134D7B2A2B25F200E83964 /* InputProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D7A2A2B25F200E83964 /* InputProfileScreen.swift */; };
+		04134D7D2A2B548700E83964 /* ImagePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D7C2A2B548700E83964 /* ImagePickerComponent.swift */; };
+		04134D7F2A2B562800E83964 /* InputProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D7E2A2B562800E83964 /* InputProfileViewModel.swift */; };
+		04134D812A2B5ACA00E83964 /* ImageFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D802A2B5ACA00E83964 /* ImageFunc.swift */; };
+		04134D852A2B60D500E83964 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D842A2B60D500E83964 /* UserStruct.swift */; };
 		04292FD82A248344000DE0E1 /* ChartInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */; };
 		04292FDD2A2495ED000DE0E1 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */; };
 		04292FE02A249F30000DE0E1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDF2A249F30000DE0E1 /* DateExtension.swift */; };
@@ -70,6 +75,11 @@
 		04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		04134D742A2B1E3D00E83964 /* AddUpReminderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUpReminderScreen.swift; sourceTree = "<group>"; };
 		04134D752A2B1E3D00E83964 /* ReminderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderScreen.swift; sourceTree = "<group>"; };
+		04134D7A2A2B25F200E83964 /* InputProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProfileScreen.swift; sourceTree = "<group>"; };
+		04134D7C2A2B548700E83964 /* ImagePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerComponent.swift; sourceTree = "<group>"; };
+		04134D7E2A2B562800E83964 /* InputProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProfileViewModel.swift; sourceTree = "<group>"; };
+		04134D802A2B5ACA00E83964 /* ImageFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFunc.swift; sourceTree = "<group>"; };
+		04134D842A2B60D500E83964 /* UserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
 		04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInfoStruct.swift; sourceTree = "<group>"; };
 		04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		04292FDF2A249F30000DE0E1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -182,6 +192,7 @@
 				04292FE32A24D623000DE0E1 /* TransactionCardComponent.swift */,
 				04292FE52A2590C4000DE0E1 /* MainScreenBlock.swift */,
 				04292FE72A25926C000DE0E1 /* CircleImage.swift */,
+				04134D7C2A2B548700E83964 /* ImagePickerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				04C512A62A16416000CC75F9 /* Styling.swift */,
+				04134D802A2B5ACA00E83964 /* ImageFunc.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -225,6 +237,7 @@
 				04B24F982A218FC50031D865 /* MainViewModel.swift */,
 				048FC4D72A2322D300C6E728 /* ProfileViewModel.swift */,
 				04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */,
+				04134D7E2A2B562800E83964 /* InputProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +261,7 @@
 				04134D6E2A2B1E0300E83964 /* ReminderStruct.swift */,
 				048FC4D92A2323C700C6E728 /* Profile.swift */,
 				04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */,
+				04134D842A2B60D500E83964 /* UserStruct.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -316,6 +330,7 @@
 				0448A4052A20F9C700997EBB /* TransactionScreen.swift */,
 				0448A4072A20FE1600997EBB /* AddTransactionScreen.swift */,
 				048FC4ED2A235D7B00C6E728 /* SetUpScreen.swift */,
+				04134D7A2A2B25F200E83964 /* InputProfileScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -405,8 +420,10 @@
 				048FC4D82A2322D300C6E728 /* ProfileViewModel.swift in Sources */,
 				0496DA382A1E303000F3CF2B /* BudgetViewModel.swift in Sources */,
 				0496DA322A1DA0EC00F3CF2B /* ProgressBarComponent.swift in Sources */,
+				04134D7D2A2B548700E83964 /* ImagePickerComponent.swift in Sources */,
 				04B24F992A218FC50031D865 /* MainViewModel.swift in Sources */,
 				04134D712A2B1E1D00E83964 /* ReminderCardComponent.swift in Sources */,
+				04134D812A2B5ACA00E83964 /* ImageFunc.swift in Sources */,
 				0496DA3C2A1E4B1300F3CF2B /* CategoryStruct.swift in Sources */,
 				04292FE62A2590C4000DE0E1 /* MainScreenBlock.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
@@ -422,6 +439,7 @@
 				04C512AD2A1645BC00CC75F9 /* ProfileScreen.swift in Sources */,
 				0496DA342A1E098600F3CF2B /* FloatingActionButton.swift in Sources */,
 				04292FD82A248344000DE0E1 /* ChartInfoStruct.swift in Sources */,
+				04134D7F2A2B562800E83964 /* InputProfileViewModel.swift in Sources */,
 				048FC4DF2A23261000C6E728 /* DelagateScene.swift in Sources */,
 				04C512932A163D2F00CC75F9 /* HomeScreen.swift in Sources */,
 				0496DA3E2A1F058A00F3CF2B /* BudgetStruct.swift in Sources */,
@@ -432,12 +450,14 @@
 				04292FE82A25926C000DE0E1 /* CircleImage.swift in Sources */,
 				04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */,
 				04134D762A2B1E3D00E83964 /* AddUpReminderScreen.swift in Sources */,
+				04134D7B2A2B25F200E83964 /* InputProfileScreen.swift in Sources */,
 				0496DA362A1E0AA000F3CF2B /* AddBudgetScreen.swift in Sources */,
 				04134D6F2A2B1E0300E83964 /* ReminderStruct.swift in Sources */,
 				04EBC49F2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */,
 				0448A40A2A20FEC300997EBB /* TextInputComponent.swift in Sources */,
 				048FC4EE2A235D7B00C6E728 /* SetUpScreen.swift in Sources */,
 				04C512A92A1645A200CC75F9 /* MainScreen.swift in Sources */,
+				04134D852A2B60D500E83964 /* UserStruct.swift in Sources */,
 				04EBC4952A130E5E006F85F4 /* ContentView.swift in Sources */,
 				0496DA2F2A1DA05800F3CF2B /* BudgetScreen.swift in Sources */,
 				047DFF3E2A29CB2700D7E8B2 /* MacMainScreen.swift in Sources */,

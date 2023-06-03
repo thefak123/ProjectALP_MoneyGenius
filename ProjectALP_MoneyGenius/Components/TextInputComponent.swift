@@ -10,12 +10,15 @@ import SwiftUI
 struct TextInputComponent: View {
     var label : String
     var placeholder : String
+    var hideLabel : Bool = false
     @Binding var value : String
     
     
     var body: some View {
         VStack(alignment: .leading){
-            Text(label)
+            if !hideLabel{
+                Text(label)
+            }
             TextField(placeholder, text: $value).textFieldStyle(.roundedBorder).padding(.bottom, 10)
         }
     }

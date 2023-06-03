@@ -31,6 +31,49 @@ class CoreDataManager{
         return income - outcome
     }
     
+    func setUserProfile(username : String, image : String) -> Bool{
+        let users = self.getCurrentUser()
+        if users.count == 0{
+            let user = User(context:viewContext)
+            user.name = username
+            user.profileImage = image
+            do{
+                
+                try viewContext.save()
+                return true
+            }catch{
+                print("Error : \(error)")
+                return false
+            }
+        }else{
+            let user = users[0]
+            user.name = username
+            user.profileImage = image
+            do{
+                
+                try viewContext.save()
+                return true
+            }catch{
+                print("Error : \(error)")
+                return false
+            }
+            
+        }
+        return false
+        
+    }
+    
+    func getCurrentUser() -> [User]{
+        let request : NSFetchRequest<User> = User.fetchRequest()
+        do{
+            let user = try viewContext.fetch(request)
+            return user
+        }catch{
+            print("Error : \(error)")
+        }
+        return []
+    }
+    
     
     // Category Area
     func fillTheDefaultCategories(){

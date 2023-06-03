@@ -56,9 +56,6 @@ struct MainScreenBlock: View {
                         .foregroundColor(.gray)
                     
                 }.onAppear{
-                    #if os(iOS)
-                                        
-                    #endif
                                         
                     #if os(iOS)
                     #if targetEnvironment(macCatalyst)

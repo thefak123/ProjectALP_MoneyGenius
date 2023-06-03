@@ -7,14 +7,16 @@
 
 import Foundation
 import CoreData
-
+import SwiftUI
 class MainViewModel : ObservableObject{
     var name : String = ""
     var amount : Int = 0
     var type : String = ""
+    var user : UserStruct? = nil
+    @Published var image = UIImage()
     @Published var saldo : Int = 0
-    
     @Published var transactions : [TransactionStruct] = []
+    
     let coreDataManager = CoreDataManager.shared
     
     func getAllTransaction() {
@@ -33,6 +35,14 @@ class MainViewModel : ObservableObject{
         let trans = coreDataManager.getTransactionById(id: transactions[index].id)
         coreDataManager.deleteTrancaction(trans: trans!)
         self.getAllTransaction()
+    }
+    
+    func getCurrentUser(){
+        let users = coreDataManager.getCurrentUser().map(UserStruct.init)
+        if users.count != 0{
+            user = users[0]
+            image = loadImageFromDiskWith(fileName: user?.profileImage ?? "") ?? UIImage()
+        }
     }
     
     func getTotalSum() -> Int{

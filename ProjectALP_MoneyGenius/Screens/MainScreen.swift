@@ -31,14 +31,24 @@ struct MainScreen: View {
             NavigationStack(path: $path){
                 VStack{
                     HStack {
-                        CImage(image: Image("Ellipse"))
-                            .frame(width: 56, height: 56)
+                        if viewModel.user == nil {
+                            CImage(image: Image( "Ellipse"))
+                                .frame(width: 56, height: 56)
+                        }else{
+                            Image(uiImage: viewModel.image)
+                                .resizable()
+                                .cornerRadius(50)
+                                .frame(width: 56, height: 56)
+                                .background(Color.black.opacity(0.2))
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(Circle())
+                        }
                         
                         VStack(alignment: .leading) {
                             Text("Welcome back,")
                                 .foregroundColor(.gray)
                                 .font(.custom("Inter", size: 12))
-                            Text("Bryan")
+                            Text(viewModel.user?.name ?? "Unknown")
                                 .foregroundColor(.black)
                                 .font(.custom("Inter", size: 18))
                         }
@@ -94,6 +104,7 @@ struct MainScreen: View {
                         }
                     }.padding(.top,-80).onAppear{
                         viewModel.getBalanceUser()
+                        viewModel.getCurrentUser()
                     }
                     
                     
