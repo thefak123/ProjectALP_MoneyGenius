@@ -11,7 +11,12 @@ import Charts
 struct StatisticsScreen: View {
     @StateObject var viewModel = StatisticsViewModel()
     @State var refresher : Bool = false
-
+    func binding(for trans: TransactionStruct) -> Binding<TransactionStruct> {
+        guard let transIndex = viewModel.latestTransaction.firstIndex(of: trans) else {
+           fatalError("Cannot find index for the reminder")
+       }
+       return $viewModel.latestTransaction[transIndex]
+   }
     var body: some View {
         VStack(alignment: .center){
             if viewModel.data.count != 0{
@@ -31,7 +36,7 @@ struct StatisticsScreen: View {
                     Text("Latest Transaction").font(.title).fontWeight(.bold).padding([.top, .bottom], 20)
                     Divider()
                     ForEach(viewModel.latestTransaction, id:\.id){ trans in
-                        TransactionCardComponent(trans: trans)
+                        TransactionCardComponent(trans: binding(for:trans))
                         Divider()
                         
                     }

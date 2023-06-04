@@ -41,7 +41,7 @@ struct InputProfileScreen: View {
                     viewModel.getCurrentUser()
                 }
                 
-                TextInputComponent(label: "Name", placeholder: "Input Name", value: $viewModel.name)
+                TextInputComponent(label: "Name", placeholder: "Input Name", hideLabel: true, value: $viewModel.name)
                 Button(action: {
                     viewModel.setInputProfile()
                     if viewModel.isSaved{

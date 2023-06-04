@@ -17,6 +17,13 @@
 		04134D7F2A2B562800E83964 /* InputProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D7E2A2B562800E83964 /* InputProfileViewModel.swift */; };
 		04134D812A2B5ACA00E83964 /* ImageFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D802A2B5ACA00E83964 /* ImageFunc.swift */; };
 		04134D852A2B60D500E83964 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D842A2B60D500E83964 /* UserStruct.swift */; };
+		04134D872A2C193800E83964 /* GoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D862A2C193800E83964 /* GoalScreen.swift */; };
+		04134D8B2A2C1D9B00E83964 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D8A2A2C1D9B00E83964 /* GoalViewModel.swift */; };
+		04134D8D2A2C1FAD00E83964 /* GoalStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D8C2A2C1FAD00E83964 /* GoalStruct.swift */; };
+		04134D8F2A2C20F700E83964 /* GoalCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D8E2A2C20F700E83964 /* GoalCardComponent.swift */; };
+		04134D912A2C220B00E83964 /* CreateGoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D902A2C220B00E83964 /* CreateGoalScreen.swift */; };
+		04134D932A2C3E3E00E83964 /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D922A2C3E3E00E83964 /* EditProfileScreen.swift */; };
+		04134D952A2C3F2F00E83964 /* UpdateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D942A2C3F2F00E83964 /* UpdateProfileViewModel.swift */; };
 		04292FD82A248344000DE0E1 /* ChartInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */; };
 		04292FDD2A2495ED000DE0E1 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */; };
 		04292FE02A249F30000DE0E1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292FDF2A249F30000DE0E1 /* DateExtension.swift */; };
@@ -80,6 +87,13 @@
 		04134D7E2A2B562800E83964 /* InputProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProfileViewModel.swift; sourceTree = "<group>"; };
 		04134D802A2B5ACA00E83964 /* ImageFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFunc.swift; sourceTree = "<group>"; };
 		04134D842A2B60D500E83964 /* UserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
+		04134D862A2C193800E83964 /* GoalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalScreen.swift; sourceTree = "<group>"; };
+		04134D8A2A2C1D9B00E83964 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		04134D8C2A2C1FAD00E83964 /* GoalStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStruct.swift; sourceTree = "<group>"; };
+		04134D8E2A2C20F700E83964 /* GoalCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardComponent.swift; sourceTree = "<group>"; };
+		04134D902A2C220B00E83964 /* CreateGoalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalScreen.swift; sourceTree = "<group>"; };
+		04134D922A2C3E3E00E83964 /* EditProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
+		04134D942A2C3F2F00E83964 /* UpdateProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewModel.swift; sourceTree = "<group>"; };
 		04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInfoStruct.swift; sourceTree = "<group>"; };
 		04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		04292FDF2A249F30000DE0E1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -193,6 +207,7 @@
 				04292FE52A2590C4000DE0E1 /* MainScreenBlock.swift */,
 				04292FE72A25926C000DE0E1 /* CircleImage.swift */,
 				04134D7C2A2B548700E83964 /* ImagePickerComponent.swift */,
+				04134D8E2A2C20F700E83964 /* GoalCardComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,6 +253,8 @@
 				048FC4D72A2322D300C6E728 /* ProfileViewModel.swift */,
 				04292FDC2A2495ED000DE0E1 /* StatisticsViewModel.swift */,
 				04134D7E2A2B562800E83964 /* InputProfileViewModel.swift */,
+				04134D8A2A2C1D9B00E83964 /* GoalViewModel.swift */,
+				04134D942A2C3F2F00E83964 /* UpdateProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,6 +279,7 @@
 				048FC4D92A2323C700C6E728 /* Profile.swift */,
 				04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */,
 				04134D842A2B60D500E83964 /* UserStruct.swift */,
+				04134D8C2A2C1FAD00E83964 /* GoalStruct.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -331,6 +349,9 @@
 				0448A4072A20FE1600997EBB /* AddTransactionScreen.swift */,
 				048FC4ED2A235D7B00C6E728 /* SetUpScreen.swift */,
 				04134D7A2A2B25F200E83964 /* InputProfileScreen.swift */,
+				04134D862A2C193800E83964 /* GoalScreen.swift */,
+				04134D902A2C220B00E83964 /* CreateGoalScreen.swift */,
+				04134D922A2C3E3E00E83964 /* EditProfileScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -412,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04134D8F2A2C20F700E83964 /* GoalCardComponent.swift in Sources */,
 				04C512B62A1673BB00CC75F9 /* Transaction.swift in Sources */,
 				04C512B32A16588900CC75F9 /* TransactionViewModel.swift in Sources */,
 				048FC4E12A23269600C6E728 /* Header.swift in Sources */,
@@ -422,17 +444,21 @@
 				0496DA322A1DA0EC00F3CF2B /* ProgressBarComponent.swift in Sources */,
 				04134D7D2A2B548700E83964 /* ImagePickerComponent.swift in Sources */,
 				04B24F992A218FC50031D865 /* MainViewModel.swift in Sources */,
+				04134D952A2C3F2F00E83964 /* UpdateProfileViewModel.swift in Sources */,
 				04134D712A2B1E1D00E83964 /* ReminderCardComponent.swift in Sources */,
 				04134D812A2B5ACA00E83964 /* ImageFunc.swift in Sources */,
 				0496DA3C2A1E4B1300F3CF2B /* CategoryStruct.swift in Sources */,
 				04292FE62A2590C4000DE0E1 /* MainScreenBlock.swift in Sources */,
+				04134D872A2C193800E83964 /* GoalScreen.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
 				04134D772A2B1E3D00E83964 /* ReminderScreen.swift in Sources */,
+				04134D8D2A2C1FAD00E83964 /* GoalStruct.swift in Sources */,
 				04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */,
 				04292FE42A24D623000DE0E1 /* TransactionCardComponent.swift in Sources */,
 				04C512AB2A1645B100CC75F9 /* StatisticsScreen.swift in Sources */,
 				04292FE02A249F30000DE0E1 /* DateExtension.swift in Sources */,
 				0448A4082A20FE1700997EBB /* AddTransactionScreen.swift in Sources */,
+				04134D912A2C220B00E83964 /* CreateGoalScreen.swift in Sources */,
 				047DFF402A29CBB700D7E8B2 /* IpadMainScreen.swift in Sources */,
 				04C512A72A16416000CC75F9 /* Styling.swift in Sources */,
 				048FC4E52A2355DF00C6E728 /* colorSlider.swift in Sources */,
@@ -447,10 +473,12 @@
 				04C512B12A16575A00CC75F9 /* CoreDataManager.swift in Sources */,
 				0448A4062A20F9C700997EBB /* TransactionScreen.swift in Sources */,
 				04EBC49C2A130E5F006F85F4 /* Persistence.swift in Sources */,
+				04134D8B2A2C1D9B00E83964 /* GoalViewModel.swift in Sources */,
 				04292FE82A25926C000DE0E1 /* CircleImage.swift in Sources */,
 				04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */,
 				04134D762A2B1E3D00E83964 /* AddUpReminderScreen.swift in Sources */,
 				04134D7B2A2B25F200E83964 /* InputProfileScreen.swift in Sources */,
+				04134D932A2C3E3E00E83964 /* EditProfileScreen.swift in Sources */,
 				0496DA362A1E0AA000F3CF2B /* AddBudgetScreen.swift in Sources */,
 				04134D6F2A2B1E0300E83964 /* ReminderStruct.swift in Sources */,
 				04EBC49F2A130E5F006F85F4 /* ProjectALP_MoneyGenius.xcdatamodeld in Sources */,

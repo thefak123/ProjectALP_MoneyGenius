@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct UserStruct{
+struct UserStruct : Hashable{
    
     var user : User
     

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TransactionCardComponent: View {
-    var trans : TransactionStruct
+    @Binding var trans : TransactionStruct
     var body: some View {
         HStack{
             VStack(alignment: .leading){

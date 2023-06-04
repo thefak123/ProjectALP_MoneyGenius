@@ -18,6 +18,13 @@ struct TransactionScreen: View {
         }
     }
     
+    func binding(for trans: TransactionStruct) -> Binding<TransactionStruct> {
+       guard let transIndex = viewModel.transactions.firstIndex(of: trans) else {
+           fatalError("Cannot find index for the reminder")
+       }
+       return $viewModel.transactions[transIndex]
+   }
+    
     
     
     var body: some View {
@@ -34,7 +41,7 @@ struct TransactionScreen: View {
                 }
                 ForEach(viewModel.transactions, id: \.id){ trans in
                     if trans.categoryType == "income" {
-                        TransactionCardComponent(trans: trans).onTapGesture{
+                        TransactionCardComponent(trans: binding(for:trans)).onTapGesture{
                             path.append(trans)
                         }
                         
@@ -54,7 +61,7 @@ struct TransactionScreen: View {
                 }
                 ForEach(viewModel.transactions, id: \.id){ trans in
                     if trans.categoryType == "expense" {
-                        TransactionCardComponent(trans: trans).onTapGesture{
+                        TransactionCardComponent(trans: binding(for:trans)).onTapGesture{
                             path.append(trans)
                         }
                         

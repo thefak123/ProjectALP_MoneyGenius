@@ -24,6 +24,8 @@ class CoreDataManager{
         }
     }
     
+    
+    
     // User Area
     func getTotalBalanceUser() -> Int{
         let income = getSumTransaction(type: "income")
@@ -73,6 +75,75 @@ class CoreDataManager{
         }
         return []
     }
+    
+    // Goal Area
+    func getAllGoal() -> [Goal]{
+        let request : NSFetchRequest<Goal> = Goal.fetchRequest()
+        do{
+            let result = try viewContext.fetch(request)
+            return result
+        }catch{
+            print("There is some error : \(error)")
+            return []
+        }
+    }
+    
+    func createGoal(name : String, note : String, amount : Int64){
+        let goal = Goal(context:viewContext)
+        goal.name = name
+        goal.note = note
+        goal.date = Date()
+        goal.isAchieved = false
+        goal.amount = amount
+        do{
+            try viewContext.save()
+        }catch{
+            print("Error : \(error)")
+        }
+        
+    }
+    
+    func findGoalByid(id : NSManagedObjectID) -> Goal?{
+        do{
+            return try viewContext.existingObject(with: id) as? Goal
+        }catch{
+            return nil
+        }
+        
+    }
+    
+    func updateGoal(id : NSManagedObjectID, name : String, note : String, amount : Int64){
+        let goal = findGoalByid(id: id)!
+        goal.name = name
+        goal.note = note
+        goal.amount = amount
+        goal.isAchieved = false
+        do {
+            try viewContext.save()
+        }catch{
+            print("Error : \(error)")
+        }
+    }
+    
+    func updateSuccessGoal(id : NSManagedObjectID, name : String, note : String, amount : Int64){
+        let goal = findGoalByid(id: id)!
+        goal.name = name
+        goal.note = note
+        goal.amount = amount
+        goal.isAchieved = true
+        do {
+            try viewContext.save()
+        }catch{
+            print("Error : \(error)")
+        }
+    }
+    
+    func deleteGoal(goal : Goal){
+        viewContext.delete(goal)
+        
+        try? viewContext.save()
+    }
+    
     
     
     // Category Area
