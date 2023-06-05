@@ -37,7 +37,7 @@ struct StatisticsScreen: View {
                             ForEach(1950...Date().year, id: \.self) {
                                 Text(String($0))
                             }
-                        }.pickerStyle(.wheel).onReceive(viewModel.$selection, perform: { value in
+                        }.pickerStyle(.menu).onReceive(viewModel.$selection, perform: { value in
                             print("This is screen : \(value)")
                             viewModel.objectWillChange.send()
                             viewModel.getSumTransactionByMonth(year:value)

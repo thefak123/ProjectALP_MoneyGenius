@@ -136,7 +136,7 @@ struct MacMainScreen: View {
                         GoalScreen(path: $path).navigationBarTitle("Goal Screen").toolbarBackground(Color.init(
                             Theme.darkMainColor),
                             for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
                     }else if view == "addgoal"{
                         CreateGoalScreen(path: $path).navigationBarTitle("Create Goal").toolbarBackground(Color.init(
                             Theme.darkMainColor),
@@ -151,7 +151,7 @@ struct MacMainScreen: View {
                         ReminderScreen(path: $path).navigationBarTitle("Reminder").toolbarBackground(Color.init(
                             Theme.darkMainColor),
                             for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
                     }else if view == "addupreminderscreen" {
                         AddUpReminderScreen(path: $path).navigationBarTitle("Add Reminder").toolbarBackground(Color.init(
                             Theme.darkMainColor),

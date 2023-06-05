@@ -40,16 +40,6 @@ struct ReminderScreen: View {
                     .onDelete(perform: deleteReminder)
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    VStack {
-                        Text("Money Genius")
-                            .foregroundColor(Color.blue)
-                            .bold()
-                        
-                    }
-                }
-            }
             
            
         }
