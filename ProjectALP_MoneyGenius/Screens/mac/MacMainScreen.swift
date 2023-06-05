@@ -126,12 +126,14 @@ struct MacMainScreen: View {
                         AddTransactionScreen(type: "income", path: $path).navigationBarTitle("Add Income").toolbarBackground(Color.init(
                             Theme.darkMainColor),
                             for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
+
                     }else if view == "addtransactionoutcome"{
                         AddTransactionScreen(type: "expense", path: $path).navigationBarTitle("Add Outcome").toolbarBackground(Color.init(
                             Theme.darkMainColor),
                             for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
+
                     }else if view == "goalscreen"{
                         GoalScreen(path: $path).navigationBarTitle("Goal Screen").toolbarBackground(Color.init(
                             Theme.darkMainColor),
@@ -141,12 +143,14 @@ struct MacMainScreen: View {
                         CreateGoalScreen(path: $path).navigationBarTitle("Create Goal").toolbarBackground(Color.init(
                             Theme.darkMainColor),
                             for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
+
                     }else if view == "addbudget"{
                         AddBudgetScreen(path: $path).navigationBarTitle("Add Budget").toolbarBackground(Color.init(
                             Theme.darkMainColor),
                             for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
+
                     }else if view == "reminderscreen" {
                         ReminderScreen(path: $path).navigationBarTitle("Reminder").toolbarBackground(Color.init(
                             Theme.darkMainColor),
@@ -156,7 +160,8 @@ struct MacMainScreen: View {
                         AddUpReminderScreen(path: $path).navigationBarTitle("Add Reminder").toolbarBackground(Color.init(
                             Theme.darkMainColor),
                             for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
+
                     }
                     
                 }.navigationDestination(for: GoalStruct.self) { goal in
