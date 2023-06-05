@@ -41,7 +41,7 @@ struct AddUpReminderScreen: View {
                 Text("\(reminder != nil ? "Update" : "Add") Reminder")
                     .frame(width: 150, height: 50)
             }
-            .buttonStyle(.borderedProminent)
+            .background(Color.init(Theme.darkMainColor))
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.top, 30)
             
