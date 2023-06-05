@@ -47,7 +47,7 @@ struct AddTransactionScreen: View {
                 }
                 path.removeLast()
             }){
-                Text("\(trans != nil ? "Edit" : "Add") Transaction").frame(width: 150 , height: 50, alignment: .center)
+                Text("\(trans != nil ? "Edit" : "Add") Transaction").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)
             }.background(Color.init(Theme.darkMainColor)).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)
             Spacer()
         }.padding(20).onAppear{

@@ -39,7 +39,7 @@ struct AddUpReminderScreen: View {
                 path.removeLast()
             }) {
                 Text("\(reminder != nil ? "Update" : "Add") Reminder")
-                    .frame(width: 150, height: 50)
+                    .frame(width: 150, height: 50).foregroundColor(.white)
             }
             .background(Color.init(Theme.darkMainColor))
             .frame(maxWidth: .infinity, alignment: .center)

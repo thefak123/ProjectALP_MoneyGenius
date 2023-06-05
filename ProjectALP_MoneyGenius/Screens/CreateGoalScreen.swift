@@ -35,7 +35,7 @@ struct CreateGoalScreen: View {
                 }
                 path.removeLast()
             }){
-                Text("\(goal != nil ? "Edit" : "Add") Goal").frame(width: 150 , height: 50, alignment: .center)
+                Text("\(goal != nil ? "Edit" : "Add") Goal").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)
             }.background(Color.init(Theme.darkMainColor)).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)
             Spacer()
         }.padding(30).onAppear{

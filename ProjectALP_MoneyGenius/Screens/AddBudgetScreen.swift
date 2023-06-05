@@ -14,7 +14,8 @@ struct AddBudgetScreen: View {
             VStack(alignment: .leading) {
                 Text("Add Budget").font(.title).padding(.bottom, 10)
                 HStack{
-                    Text("Select Category :")
+                    Text("Select Category")
+                    Spacer()
                     Menu {
                         ForEach(viewModel.categories, id: \.id) {cat in
                             Button {
@@ -50,7 +51,7 @@ struct AddBudgetScreen: View {
                     viewModel.insertNewBudget()
                     path.removeLast()
                 }){
-                    Text("Add Budget").frame(width: 150 , height: 50, alignment: .center)
+                    Text("Add Budget").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)
                 }.background(Color.init(Theme.darkMainColor)).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)
                 
                 Spacer()

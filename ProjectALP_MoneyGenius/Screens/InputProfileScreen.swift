@@ -49,8 +49,8 @@ struct InputProfileScreen: View {
                     }
                     
                 }){
-                    Text("Set Profile").frame(width: 150 , height: 50, alignment: .center)
-                }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)
+                    Text("Set Profile").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)
+                }.background(Color.init(Theme.darkMainColor)).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)
                 Spacer()
             }.sheet(isPresented: $showSheet) {
                 // Pick an image from the photo library:
