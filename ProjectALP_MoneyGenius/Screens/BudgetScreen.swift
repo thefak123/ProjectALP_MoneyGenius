@@ -35,7 +35,12 @@ struct BudgetScreen: View {
         }.padding(20).onAppear{
             viewModel.getAllBudgetInfo()
             viewModel.deleteAllBudget()
-        }
+        }.toolbarBackground(
+            
+            // 1
+            Color.pink,
+            // 2
+            for: .navigationBar)
         
     }
 }

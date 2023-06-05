@@ -30,7 +30,7 @@ struct ProjectALP_MoneyGeniusApp: App {
             WindowGroup {
                 ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .environmentObject(reminderViewModel)
+                    .environmentObject(reminderViewModel).preferredColorScheme(.light)
             }
         }
 }

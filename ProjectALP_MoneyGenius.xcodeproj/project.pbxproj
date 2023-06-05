@@ -70,6 +70,7 @@
 		04E428592A2DCC0A00C35EA5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E428582A2DCC0A00C35EA5 /* Theme.swift */; };
 		04E4285B2A2DD0A300C35EA5 /* ReloadViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4285A2A2DD0A300C35EA5 /* ReloadViewHelper.swift */; };
 		04E4285D2A2DD56300C35EA5 /* ChartArrayPartStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4285C2A2DD56300C35EA5 /* ChartArrayPartStruct.swift */; };
+		04E428612A2DF9AF00C35EA5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E428602A2DF9AF00C35EA5 /* Color.swift */; };
 		04EBC4932A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */; };
 		04EBC4952A130E5E006F85F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4942A130E5E006F85F4 /* ContentView.swift */; };
 		04EBC4972A130E5F006F85F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EBC4962A130E5F006F85F4 /* Assets.xcassets */; };
@@ -145,6 +146,7 @@
 		04E428582A2DCC0A00C35EA5 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		04E4285A2A2DD0A300C35EA5 /* ReloadViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadViewHelper.swift; sourceTree = "<group>"; };
 		04E4285C2A2DD56300C35EA5 /* ChartArrayPartStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartArrayPartStruct.swift; sourceTree = "<group>"; };
+		04E428602A2DF9AF00C35EA5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		04EBC48F2A130E5E006F85F4 /* ProjectALP_MoneyGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectALP_MoneyGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectALP_MoneyGeniusApp.swift; sourceTree = "<group>"; };
 		04EBC4942A130E5E006F85F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				04292FDF2A249F30000DE0E1 /* DateExtension.swift */,
+				04E428602A2DF9AF00C35EA5 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				04134D872A2C193800E83964 /* GoalScreen.swift in Sources */,
 				04EBC4C62A163BAD006F85F4 /* SplashScreen.swift in Sources */,
 				04134D772A2B1E3D00E83964 /* ReminderScreen.swift in Sources */,
+				04E428612A2DF9AF00C35EA5 /* Color.swift in Sources */,
 				04134D8D2A2C1FAD00E83964 /* GoalStruct.swift in Sources */,
 				04C512912A163CD400CC75F9 /* CoreDataTutor.swift in Sources */,
 				04292FE42A24D623000DE0E1 /* TransactionCardComponent.swift in Sources */,

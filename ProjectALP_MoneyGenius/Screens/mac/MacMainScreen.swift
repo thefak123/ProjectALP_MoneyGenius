@@ -11,7 +11,7 @@ struct MacMainScreen: View {
     @StateObject private var viewModel = MainViewModel()
     
     @State var path = NavigationPath()
-    
+    let theme = Theme()
     func deleteTransaction(offsets: IndexSet) {
         offsets.forEach { index in
             viewModel.deleteTransaction(index: index)
@@ -86,7 +86,9 @@ struct MacMainScreen: View {
                             MainScreenBlock(image:"Send", text: "Transactions", desc: "Income & Outcome").onTapGesture{
                                 path.append("transactionscreen")
                             }
-                            MainScreenBlock(image:"Wallet", text: "Goals", desc: "Your Goals")
+                            MainScreenBlock(image:"Wallet", text: "Goals", desc: "Your Goals").onTapGesture{
+                                path.append("goalscreen")
+                            }
                         }
                         HStack(spacing: 48){
                             MainScreenBlock(image:"3 User", text: "Reminder", desc: "Set Your Reminder").onTapGesture {
@@ -99,6 +101,7 @@ struct MacMainScreen: View {
                     }.padding(.top,-80).onAppear{
                         viewModel.getBalanceUser()
                         viewModel.getCurrentUser()
+             
                     }
                     
                     
@@ -107,31 +110,75 @@ struct MacMainScreen: View {
                 }.navigationDestination(for: String.self) { view in
                     if view == "budgetscreen" {
                         
-                        BudgetScreen(path: $path).toolbar(.hidden, for: .tabBar)
+                        BudgetScreen(path: $path).navigationBarTitle("Budget Screen").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
                         
                     }else if view == "transactionscreen"{
-                        TransactionScreen(path: $path)
+                        TransactionScreen(path: $path).navigationBarTitle("Transaction").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar).toolbarColorScheme(.dark, for: .navigationBar)
+
+                          
                     }else if view == "addtransactionincome"{
-                        AddTransactionScreen(type: "income", path: $path)
+                        AddTransactionScreen(type: "income", path: $path).navigationBarTitle("Add Income").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
                     }else if view == "addtransactionoutcome"{
-                        AddTransactionScreen(type: "expense", path: $path)
+                        AddTransactionScreen(type: "expense", path: $path).navigationBarTitle("Add Outcome").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
+                    }else if view == "goalscreen"{
+                        GoalScreen(path: $path).navigationBarTitle("Goal Screen").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
+                    }else if view == "addgoal"{
+                        CreateGoalScreen(path: $path).navigationBarTitle("Create Goal").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
                     }else if view == "addbudget"{
-                        AddBudgetScreen(path: $path)
+                        AddBudgetScreen(path: $path).navigationBarTitle("Add Budget").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
                     }else if view == "reminderscreen" {
-                        ReminderScreen(path: $path)
+                        ReminderScreen(path: $path).navigationBarTitle("Reminder").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
                     }else if view == "addupreminderscreen" {
-                        AddUpReminderScreen(path: $path)
+                        AddUpReminderScreen(path: $path).navigationBarTitle("Add Reminder").toolbarBackground(Color.init(
+                            Theme.darkMainColor),
+                            for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
                     }
                     
+                }.navigationDestination(for: GoalStruct.self) { goal in
+                    CreateGoalScreen(goal: goal, path: $path).navigationBarTitle("Update Goal").toolbarBackground(Color.init(
+                        Theme.darkMainColor),
+                        for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
                 }.navigationDestination(for: ReminderStruct.self) { reminder in
-                    AddUpReminderScreen(reminder: reminder, path: $path)
+                    AddUpReminderScreen(reminder: reminder, path: $path).navigationBarTitle("Update Reminder").toolbarBackground(Color.init(
+                        Theme.darkMainColor),
+                        for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
                 }.navigationDestination(for: TransactionStruct.self){trans in
-                    AddTransactionScreen(trans: trans,type:trans.categoryType, path: $path)
+                    AddTransactionScreen(trans: trans,type:trans.categoryType, path: $path).navigationBarTitle("Update Transaction").toolbarBackground(Color.init(
+                        Theme.darkMainColor),
+                        for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
                     
                 }
                 
             }
-        }
+        }.tint(.white)
         
     }
 }

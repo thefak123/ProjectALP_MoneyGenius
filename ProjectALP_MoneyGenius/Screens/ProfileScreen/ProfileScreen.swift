@@ -39,7 +39,8 @@ struct ProfileScreen: View {
                 Spacer()
                 
             }.padding(30)
-        }
+        }.navigationBarHidden(true)
+
     }
 }
 

@@ -9,7 +9,8 @@ import SwiftUI
 import Foundation
 
 class Theme{
-    static var mainColor : Color = Color("#3886F7")
-    static var secondaryColor : Color = Color("#05377F")
+    static var mainColor : UIColor = hexStringToUIColor(hex: "#3886F7")
+    static var secondaryColor : UIColor = hexStringToUIColor(hex: "#05377F")
+    static var darkMainColor : UIColor = hexStringToUIColor(hex: "#031C77")
 
 }

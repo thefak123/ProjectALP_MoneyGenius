@@ -18,56 +18,58 @@ struct StatisticsScreen: View {
        return $viewModel.latestTransaction[transIndex]
    }
     var body: some View {
-        
-        VStack(alignment: .center){
-            if viewModel.data.count != 0{
-                if viewModel.data[0].data.count != 0{
-                    
-                   
-                    Chart {
+        ZStack{
+            VStack(alignment: .center){
+                if viewModel.data.count != 0{
+                    if viewModel.data[0].data.count != 0 || viewModel.data[1].data.count != 0{
                         
-                        ForEach(viewModel.data, id: \.type) { element in
-                            ForEach(element.data) { data in
-                                BarMark(x: .value("Month", data.monthName), y: .value("Total amount", data.totalAmount))
-                                
-                            }.foregroundStyle(by: .value("Type", element.type)).position(by: .value("Type", element.type))
-                        }
-                    }.frame(height: UIScreen.main.bounds.height / 4)
-                    Picker("2023", selection: $viewModel.selection) {
-                        ForEach(1950...Date().year, id: \.self) {
-                            Text(String($0))
-                        }
-                    }.pickerStyle(.wheel).onReceive(viewModel.$selection, perform: { value in
-                        print("This is screen : \(value)")
-                        viewModel.objectWillChange.send()
-                        viewModel.getSumTransactionByMonth(year:value)
                         
-
-                        
-                    }).frame(height:50)
-                    HStack(alignment: .center){
-                        MainScreenBlock(image: "square.and.arrow.down", text: "Rp. \(viewModel.totalIncome)", desc: "Income", systemName: true)
-                        MainScreenBlock(image: "square.and.arrow.up", text: "Rp. \(viewModel.totalExpense)", desc: "Outcome", systemName: true)
-                    }.frame(height: UIScreen.main.bounds.height / 4)
-                    Text("Latest Transaction").font(.title).fontWeight(.bold).padding([.top, .bottom], 20)
-                    Divider()
-                    ForEach(viewModel.latestTransaction, id:\.id){ trans in
-                        TransactionCardComponent(trans: binding(for:trans))
+                        Chart {
+                            
+                            ForEach(viewModel.data, id: \.type) { element in
+                                ForEach(element.data) { data in
+                                    BarMark(x: .value("Month", data.monthName), y: .value("Total amount", data.totalAmount))
+                                    
+                                }.foregroundStyle(by: .value("Type", element.type)).position(by: .value("Type", element.type))
+                            }
+                        }.frame(height: UIScreen.main.bounds.height / 4)
+                        Picker("2023", selection: $viewModel.selection) {
+                            ForEach(1950...Date().year, id: \.self) {
+                                Text(String($0))
+                            }
+                        }.pickerStyle(.wheel).onReceive(viewModel.$selection, perform: { value in
+                            print("This is screen : \(value)")
+                            viewModel.objectWillChange.send()
+                            viewModel.getSumTransactionByMonth(year:value)
+                            
+                            
+                            
+                        }).frame(height:50)
+                        HStack(alignment: .center){
+                            MainScreenBlock(image: "square.and.arrow.down", text: "Rp. \(viewModel.totalIncome)", desc: "Income", systemName: true)
+                            MainScreenBlock(image: "square.and.arrow.up", text: "Rp. \(viewModel.totalExpense)", desc: "Outcome", systemName: true)
+                        }.frame(height: UIScreen.main.bounds.height / 4)
+                        Text("Latest Transaction").font(.title).fontWeight(.bold).padding([.top, .bottom], 20)
                         Divider()
+                        ForEach(viewModel.latestTransaction, id:\.id){ trans in
+                            TransactionCardComponent(trans: binding(for:trans))
+                            Divider()
+                            
+                        }
                         
+                        Spacer()
+                    }else {
+                        Text("There is no data to display")
                     }
-                    
-                    Spacer()
-                }else {
-                    Text("There is no data to display")
                 }
+            }.padding(20).onAppear{
+                viewModel.getSumTransactionByMonth(year:Date().year)
+                viewModel.getLatestTransaction(n: 5)
+                viewModel.getTotalExpenseTransaction()
+                viewModel.getTotalIncomeTranasaction()
             }
-        }.padding(20).onAppear{
-            viewModel.getSumTransactionByMonth(year:Date().year)
-            viewModel.getLatestTransaction(n: 5)
-            viewModel.getTotalExpenseTransaction()
-            viewModel.getTotalIncomeTranasaction()
-        }
+        }.navigationBarHidden(false)
+
     }
 }
 

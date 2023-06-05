@@ -55,7 +55,8 @@ struct AddTransactionScreen: View {
             viewModel.getAllCategories(type: self.type)
             viewModel.category = trans?.transaction.category.map(CategoryStruct.init)
             viewModel.note = trans?.note ?? ""
-            viewModel.amount = String(trans?.amount ?? 0) 
+            viewModel.amount = String(trans?.amount ?? 0)
+            
             
         }
     }

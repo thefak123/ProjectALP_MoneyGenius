@@ -107,23 +107,31 @@ struct IpadMainScreen: View {
                     BudgetScreen(path: $path).toolbar(.hidden, for: .tabBar)
                     
                 }else if view == "transactionscreen"{
-                    TransactionScreen(path: $path)
+                    TransactionScreen(path: $path).navigationBarTitle("Transaction Screen")
                 }else if view == "addtransactionincome"{
-                    AddTransactionScreen(type: "income", path: $path)
+                    AddTransactionScreen(type: "income", path: $path).navigationBarTitle("Add Income")
                 }else if view == "addtransactionoutcome"{
-                    AddTransactionScreen(type: "expense", path: $path)
+                    AddTransactionScreen(type: "expense", path: $path).navigationBarTitle("Add Outcome")
                 }else if view == "addbudget"{
-                    AddBudgetScreen(path: $path)
+                    AddBudgetScreen(path: $path).navigationBarTitle("Add Budget")
+                }else if view == "goalscreen"{
+                    GoalScreen(path: $path).navigationBarTitle("Goal Screen")
+                }else if view == "addgoal"{
+                    CreateGoalScreen(path: $path).navigationBarTitle("Add Goal")
                 }else if view == "reminderscreen" {
-                    ReminderScreen(path: $path)
+                    ReminderScreen(path: $path).navigationBarTitle("Reminder Screen")
                 }else if view == "addupreminderscreen" {
-                    AddUpReminderScreen(path: $path)
+                    AddUpReminderScreen(path: $path).navigationBarTitle("Add Reminder Screen")
                 }
                 
+                
+                
+            }.navigationDestination(for: GoalStruct.self) { goal in
+                CreateGoalScreen(goal: goal, path: $path).navigationBarTitle("Update Goal")
             }.navigationDestination(for: ReminderStruct.self) { reminder in
-                AddUpReminderScreen(reminder: reminder, path: $path)
+                AddUpReminderScreen(reminder: reminder, path: $path).navigationBarTitle("Update Reminder")
             }.navigationDestination(for: TransactionStruct.self){trans in
-                AddTransactionScreen(trans: trans,type:trans.categoryType, path: $path)
+                AddTransactionScreen(trans: trans,type:trans.categoryType, path: $path).navigationBarTitle("Update Trasaction")
                 
             }
         }

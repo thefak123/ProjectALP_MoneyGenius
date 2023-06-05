@@ -72,6 +72,8 @@ struct TransactionScreen: View {
             
         }.onAppear{
             viewModel.getAllTransaction()
+         
+
         }
         
     }
