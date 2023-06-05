@@ -53,6 +53,8 @@ struct HomeScreen: View {
                 
                 MainScreen()
             }
+        }.onAppear {
+            viewModel.setDefaultCategories()
         }
 
 
