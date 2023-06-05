@@ -13,6 +13,10 @@ extension Date {
         return Calendar.current.component(.month, from: self)
     }
     
+    var year: Int {
+        return Calendar.current.component(.year, from: self)
+    }
+    
 }
 
 extension Date {

@@ -476,7 +476,7 @@ class CoreDataManager{
         return []
     }
     
-    func getSumTransactionByMonth(type : String) -> [ChartInfoStruct]{
+    func getSumTransactionByMonth(type : String, year : Int) -> [ChartInfoStruct]{
                 
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Transaction")
         fetchRequest.predicate = NSPredicate(format: "category.type == %@", type)
@@ -485,12 +485,18 @@ class CoreDataManager{
             do {
                 let fetchedObjects = try? viewContext.fetch(fetchRequest) as? [Transaction]
                 if fetchedObjects != nil {
-                    let resultData = Dictionary(grouping: fetchedObjects!) { elemen in
+                    var resultData = Dictionary(grouping: fetchedObjects!) { elemen in
+                        
                         return elemen.date?.month
                     }
+                    
                     for key in resultData.keys{
+                        resultData[key ?? 0] = resultData[key ?? 0]!.filter{
+                            $0.date?.year == year
+                        }
                         var monthName = DateFormatter().monthSymbols[key ?? 1 - 1]
                         var totalAmount = (resultData[key ?? 1]?.reduce(0, {$0 + $1.amount}))!
+                        
                         let chartInfo = ChartInfoStruct(id: UUID(), monthName: monthName, totalAmount: Int(totalAmount))
                         result.append(chartInfo)
                     }

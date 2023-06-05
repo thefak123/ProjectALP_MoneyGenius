@@ -10,18 +10,20 @@ import Foundation
 class StatisticsViewModel : ObservableObject{
     
     let coreDataManager = CoreDataManager.shared
-    @Published var data : [(type: String, data: [ChartInfoStruct])] = []
+    @Published var data : [ChartArrayPart] = []
     @Published var latestTransaction : [TransactionStruct] = []
     @Published var totalExpense : Int = 0
     @Published var totalIncome : Int = 0
+    @Published var selection : Int = Date().year
 
     
-    func getSumTransactionByMonth(){
-       
-        let income = coreDataManager.getSumTransactionByMonth(type: "income")
-        let outcome = coreDataManager.getSumTransactionByMonth(type: "expense")
-        data.append((type: "Income", data: income))
-        data.append((type: "Outcome", data: outcome))
+    func getSumTransactionByMonth(year : Int){
+        data.removeAll()
+        
+        let income = coreDataManager.getSumTransactionByMonth(type: "income", year: year)
+        let outcome = coreDataManager.getSumTransactionByMonth(type: "expense", year: year)
+        data.append(ChartArrayPart(type: "Income \(selection)", data: income))
+        data.append(ChartArrayPart(type: "Outcome \(selection)", data: outcome))
         print(data)
     }
     

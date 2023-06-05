@@ -12,30 +12,33 @@ struct HomeScreen: View {
     @State private var selection: String? = "home"
     
     var body: some View {
+        
         #if os(iOS)
         #if targetEnvironment(macCatalyst)
-        NavigationView {
-            List(selection: $selection) {
-                NavigationLink(destination: MainScreen(), tag: "home", selection: $selection) {
-                    Label("Home", systemImage: "house.fill")
-                        .foregroundColor(selection != "home" ? Color.gray : Color.white)
+        ZStack{
+            Color.white
+            NavigationView {
+                List(selection: $selection) {
+                    NavigationLink(destination: MainScreen(), tag: "home", selection: $selection) {
+                        Label("Home", systemImage: "house.fill")
+                            .foregroundColor(selection != "home" ? Color.gray : Color.white)
+                    }
+                    .tag("home")
+                    
+                    NavigationLink(destination: StatisticsScreen(), tag: "statistics", selection: $selection) {
+                        Label("Statistics", systemImage: "chart.pie")
+                            .foregroundColor(selection != "statistics" ? Color.gray : Color.white)
+                    }
+                    .tag("statistics")
+                    
+                    NavigationLink(destination: ProfileScreen(), tag: "profile", selection: $selection) {
+                        Label("Profile", systemImage: "person.crop.circle")
+                            .foregroundColor(selection != "profile" ? Color.gray : Color.white)
+                    }
+                    .tag("profile")
                 }
-                .tag("home")
-                
-                NavigationLink(destination: StatisticsScreen(), tag: "statistics", selection: $selection) {
-                    Label("Statistics", systemImage: "chart.pie")
-                        .foregroundColor(selection != "statistics" ? Color.gray : Color.white)
-                }
-                .tag("statistics")
-                
-                NavigationLink(destination: ProfileScreen(), tag: "profile", selection: $selection) {
-                    Label("Profile", systemImage: "person.crop.circle")
-                        .foregroundColor(selection != "profile" ? Color.gray : Color.white)
-                }
-                .tag("profile")
-            }
-            .listStyle(SidebarListStyle())
-            .navigationBarTitle("Money Genius")
+                .listStyle(SidebarListStyle())
+                .navigationBarTitle("Money Genius")
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         VStack {
@@ -45,10 +48,11 @@ struct HomeScreen: View {
                         }
                     }
                 }
-            .navigationBarTitleDisplayMode(.inline)
-            .background(Color(hex: 0x031C77))
-         
-            MainScreen()
+                .navigationBarTitleDisplayMode(.inline)
+                .background(Color(hex: 0x031C77))
+                
+                MainScreen()
+            }
         }
 
 

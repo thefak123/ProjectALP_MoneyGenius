@@ -67,6 +67,9 @@
 		04C512B12A16575A00CC75F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B02A16575A00CC75F9 /* CoreDataManager.swift */; };
 		04C512B32A16588900CC75F9 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B22A16588900CC75F9 /* TransactionViewModel.swift */; };
 		04C512B62A1673BB00CC75F9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C512B52A1673BB00CC75F9 /* Transaction.swift */; };
+		04E428592A2DCC0A00C35EA5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E428582A2DCC0A00C35EA5 /* Theme.swift */; };
+		04E4285B2A2DD0A300C35EA5 /* ReloadViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4285A2A2DD0A300C35EA5 /* ReloadViewHelper.swift */; };
+		04E4285D2A2DD56300C35EA5 /* ChartArrayPartStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4285C2A2DD56300C35EA5 /* ChartArrayPartStruct.swift */; };
 		04EBC4932A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */; };
 		04EBC4952A130E5E006F85F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC4942A130E5E006F85F4 /* ContentView.swift */; };
 		04EBC4972A130E5F006F85F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EBC4962A130E5F006F85F4 /* Assets.xcassets */; };
@@ -139,6 +142,9 @@
 		04C512B02A16575A00CC75F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04C512B22A16588900CC75F9 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		04C512B52A1673BB00CC75F9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		04E428582A2DCC0A00C35EA5 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		04E4285A2A2DD0A300C35EA5 /* ReloadViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadViewHelper.swift; sourceTree = "<group>"; };
+		04E4285C2A2DD56300C35EA5 /* ChartArrayPartStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartArrayPartStruct.swift; sourceTree = "<group>"; };
 		04EBC48F2A130E5E006F85F4 /* ProjectALP_MoneyGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectALP_MoneyGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EBC4922A130E5E006F85F4 /* ProjectALP_MoneyGeniusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectALP_MoneyGeniusApp.swift; sourceTree = "<group>"; };
 		04EBC4942A130E5E006F85F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -239,6 +245,8 @@
 			children = (
 				04C512A62A16416000CC75F9 /* Styling.swift */,
 				04134D802A2B5ACA00E83964 /* ImageFunc.swift */,
+				04E428582A2DCC0A00C35EA5 /* Theme.swift */,
+				04E4285A2A2DD0A300C35EA5 /* ReloadViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				04292FD72A248344000DE0E1 /* ChartInfoStruct.swift */,
 				04134D842A2B60D500E83964 /* UserStruct.swift */,
 				04134D8C2A2C1FAD00E83964 /* GoalStruct.swift */,
+				04E4285C2A2DD56300C35EA5 /* ChartArrayPartStruct.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -468,12 +477,15 @@
 				04134D7F2A2B562800E83964 /* InputProfileViewModel.swift in Sources */,
 				048FC4DF2A23261000C6E728 /* DelagateScene.swift in Sources */,
 				04C512932A163D2F00CC75F9 /* HomeScreen.swift in Sources */,
+				04E4285B2A2DD0A300C35EA5 /* ReloadViewHelper.swift in Sources */,
 				0496DA3E2A1F058A00F3CF2B /* BudgetStruct.swift in Sources */,
 				048FC4DA2A2323C700C6E728 /* Profile.swift in Sources */,
+				04E4285D2A2DD56300C35EA5 /* ChartArrayPartStruct.swift in Sources */,
 				04C512B12A16575A00CC75F9 /* CoreDataManager.swift in Sources */,
 				0448A4062A20F9C700997EBB /* TransactionScreen.swift in Sources */,
 				04EBC49C2A130E5F006F85F4 /* Persistence.swift in Sources */,
 				04134D8B2A2C1D9B00E83964 /* GoalViewModel.swift in Sources */,
+				04E428592A2DCC0A00C35EA5 /* Theme.swift in Sources */,
 				04292FE82A25926C000DE0E1 /* CircleImage.swift in Sources */,
 				04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */,
 				04134D762A2B1E3D00E83964 /* AddUpReminderScreen.swift in Sources */,
@@ -620,7 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectALP_MoneyGenius/Preview Content\"";
-				DEVELOPMENT_TEAM = 64HTLCWMUT;
+				DEVELOPMENT_TEAM = 65MU3RV28U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ProjectALP-MoneyGenius-Info.plist";
@@ -654,7 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectALP_MoneyGenius/Preview Content\"";
-				DEVELOPMENT_TEAM = 64HTLCWMUT;
+				DEVELOPMENT_TEAM = 65MU3RV28U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ProjectALP-MoneyGenius-Info.plist";
