@@ -39,10 +39,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
     }
 
-    func sceneDidEnterBackground(_ scene: UIScene) {
-       
-        (UIApplication.shared.delegate as? ProfileViewModel)?.saveContext()
-    }
+//    func sceneDidEnterBackground(_ scene: UIScene) {
+//
+//        (UIApplication.shared.delegate as? ProfileViewModel)?.saveContext()
+//    }
 
 
 }
