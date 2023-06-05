@@ -37,14 +37,14 @@ struct StatisticsScreen: View {
                         ForEach(1950...Date().year, id: \.self) {
                             Text(String($0))
                         }
-                    }.pickerStyle(.menu).onReceive(viewModel.$selection, perform: { value in
+                    }.pickerStyle(.wheel).onReceive(viewModel.$selection, perform: { value in
                         print("This is screen : \(value)")
                         viewModel.objectWillChange.send()
                         viewModel.getSumTransactionByMonth(year:value)
                         
 
                         
-                    })
+                    }).frame(height:50)
                     HStack(alignment: .center){
                         MainScreenBlock(image: "square.and.arrow.down", text: "Rp. \(viewModel.totalIncome)", desc: "Income", systemName: true)
                         MainScreenBlock(image: "square.and.arrow.up", text: "Rp. \(viewModel.totalExpense)", desc: "Outcome", systemName: true)
