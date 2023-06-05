@@ -11,6 +11,8 @@ struct EditProfileScreen: View {
     @StateObject var viewModel = EditProfileViewModel()
     @State var showSheet = false
     @Binding var path : NavigationPath
+    let screenWidth = UIScreen.main.bounds.size.width
+
     var body: some View {
         
         VStack{
@@ -31,15 +33,16 @@ struct EditProfileScreen: View {
                 }) {
                     Image(systemName: "plus")
                         .font(.largeTitle)
-                        .frame(width: 20, height: 20)
+                        .frame(width: 15, height: 15)
                         .foregroundColor(.white)
-                        .padding(20)
+                        .padding(10)
                         .background(Color.blue)
                         .clipShape(Circle())
                 }
-            }
-            
-            TextInputComponent(label: "Name", placeholder: "Input Name", hideLabel: true, value: $viewModel.name)
+            }.padding([.bottom], 30)
+            HStack{
+                TextInputComponent(label: "Name", placeholder: "Input Name", hideLabel: true, value: $viewModel.name)
+            }.frame(width: screenWidth / 2)
             Button(action: {
                 viewModel.setInputProfile()
                 path.removeLast()

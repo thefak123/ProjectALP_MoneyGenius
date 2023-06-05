@@ -11,6 +11,8 @@ struct ProfileScreen: View {
     @State var isPresented = false
     @StateObject var viewModel = ProfileViewModel()
     @State var path = NavigationPath()
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
     
     var body: some View {
         NavigationStack(path:$path){
@@ -26,11 +28,16 @@ struct ProfileScreen: View {
                     Text(viewModel.user?.name ?? "")
                     List{
                         HStack{
-                            Text("Edit Profile").onTapGesture {
-                                path.append(viewModel.user!)
-                            }
+                            Spacer()
+                            HStack{
+                                Text("Edit Profile").onTapGesture {
+                                    path.append(viewModel.user!)
+                                }
+                            }.frame(width: screenWidth / 2 , height: 30).border(Color.gray)
+                            Spacer()
                         }
-                    }
+                        
+                    }.background(.white).scrollContentBackground(.hidden)
                 }.navigationDestination(for: UserStruct.self) { user in
                     EditProfileScreen(path: $path)
                 }.onAppear{

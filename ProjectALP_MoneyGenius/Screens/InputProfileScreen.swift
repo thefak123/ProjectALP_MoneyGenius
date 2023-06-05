@@ -31,9 +31,9 @@ struct InputProfileScreen: View {
                     }) {
                         Image(systemName: "plus")
                             .font(.largeTitle)
-                            .frame(width: 20, height: 20)
+                            .frame(width: 15, height: 15)
                             .foregroundColor(.white)
-                            .padding(20)
+                            .padding(10)
                             .background(Color.blue)
                             .clipShape(Circle())
                     }
