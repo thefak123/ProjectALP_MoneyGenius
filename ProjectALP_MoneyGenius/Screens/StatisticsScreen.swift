@@ -23,7 +23,7 @@ struct StatisticsScreen: View {
                 if viewModel.data.count != 0{
                     if viewModel.data[0].data.count != 0 || viewModel.data[1].data.count != 0{
                         
-                        
+                        Text("Statistics Screen").fontWeight(.bold).padding([.top], 20)
                         Chart {
                             
                             ForEach(viewModel.data, id: \.type) { element in
@@ -42,14 +42,12 @@ struct StatisticsScreen: View {
                             viewModel.objectWillChange.send()
                             viewModel.getSumTransactionByMonth(year:value)
                             
-                            
-                            
-                        }).frame(height:50)
+                        }).frame(width: (UIScreen.main.bounds.width * 3/4), height:30 ).accentColor(.black).border(.black)
                         HStack(alignment: .center){
                             MainScreenBlock(image: "square.and.arrow.down", text: "Rp. \(viewModel.totalIncome)", desc: "Income", systemName: true)
                             MainScreenBlock(image: "square.and.arrow.up", text: "Rp. \(viewModel.totalExpense)", desc: "Outcome", systemName: true)
                         }.frame(height: UIScreen.main.bounds.height / 4)
-                        Text("Latest Transaction").font(.title).fontWeight(.bold).padding([.top, .bottom], 20)
+                        Text("Latest Transaction").font(.title).fontWeight(.bold).padding([.top, .bottom], 5)
                         Divider()
                         ForEach(viewModel.latestTransaction, id:\.id){ trans in
                             TransactionCardComponent(trans: binding(for:trans))
