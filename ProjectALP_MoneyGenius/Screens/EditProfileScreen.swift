@@ -36,7 +36,7 @@ struct EditProfileScreen: View {
                         .frame(width: 15, height: 15)
                         .foregroundColor(.white)
                         .padding(10)
-                        .background(Color.blue)
+                        .background(Color.init(Theme.darkMainColor))
                         .clipShape(Circle())
                 }
             }.padding([.bottom], 30)

@@ -25,7 +25,7 @@ struct ProfileScreen: View {
                         .background(Color.black.opacity(0.2))
                         .aspectRatio(contentMode: .fill)
                         .clipShape(Circle())
-                    Text(viewModel.user?.name ?? "")
+                    Text(viewModel.user?.name ?? "").fontWeight(.bold).font(.system(size:30))
                     List{
                         HStack{
                             Spacer()
