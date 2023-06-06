@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040DD5CA2A2F95B4004FA26F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DD5C92A2F95B4004FA26F /* Array.swift */; };
 		04134D6F2A2B1E0300E83964 /* ReminderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D6E2A2B1E0300E83964 /* ReminderStruct.swift */; };
 		04134D712A2B1E1D00E83964 /* ReminderCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D702A2B1E1D00E83964 /* ReminderCardComponent.swift */; };
 		04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040DD5C92A2F95B4004FA26F /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		04134D6E2A2B1E0300E83964 /* ReminderStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderStruct.swift; sourceTree = "<group>"; };
 		04134D702A2B1E1D00E83964 /* ReminderCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderCardComponent.swift; sourceTree = "<group>"; };
 		04134D722A2B1E2D00E83964 /* ReminderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				04292FDF2A249F30000DE0E1 /* DateExtension.swift */,
 				04E428602A2DF9AF00C35EA5 /* Color.swift */,
+				040DD5C92A2F95B4004FA26F /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				0448A4062A20F9C700997EBB /* TransactionScreen.swift in Sources */,
 				04EBC49C2A130E5F006F85F4 /* Persistence.swift in Sources */,
 				04134D8B2A2C1D9B00E83964 /* GoalViewModel.swift in Sources */,
+				040DD5CA2A2F95B4004FA26F /* Array.swift in Sources */,
 				04E428592A2DCC0A00C35EA5 /* Theme.swift in Sources */,
 				04292FE82A25926C000DE0E1 /* CircleImage.swift in Sources */,
 				04134D732A2B1E2D00E83964 /* ReminderViewModel.swift in Sources */,

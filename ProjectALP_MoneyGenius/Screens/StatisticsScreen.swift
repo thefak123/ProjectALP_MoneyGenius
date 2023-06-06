@@ -42,7 +42,7 @@ struct StatisticsScreen: View {
                             viewModel.objectWillChange.send()
                             viewModel.getSumTransactionByMonth(year:value)
                             
-                        }).frame(width: (UIScreen.main.bounds.width * 3/4), height:30 ).accentColor(.black).border(.black)
+                        }).frame(width: (UIScreen.main.bounds.width * 1/2), height:30 ).accentColor(.black).border(.black)
                         HStack(alignment: .center){
                             MainScreenBlock(image: "square.and.arrow.down", text: "Rp. \(viewModel.totalIncome)", desc: "Income", systemName: true)
                             MainScreenBlock(image: "square.and.arrow.up", text: "Rp. \(viewModel.totalExpense)", desc: "Outcome", systemName: true)

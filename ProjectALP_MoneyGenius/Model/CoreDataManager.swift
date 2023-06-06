@@ -235,11 +235,11 @@ class CoreDataManager{
     func getAllCategories(type : String) -> [Category]{
         let request : NSFetchRequest<Category> = Category.fetchRequest()
         request.predicate = NSPredicate(format: "type == %@", type)
-
+        request.returnsDistinctResults = true
         
         do{
             let result = try viewContext.fetch(request)
-            return result
+            return result.unique{$0.name ?? ""}
         }catch{
             print("There is some error : \(error)")
             return []
@@ -252,7 +252,7 @@ class CoreDataManager{
 
         do{
             let result = try viewContext.fetch(request)
-            return result
+            return result.unique{$0.name ?? ""}
         }catch{
             print("There is some error : \(error)")
             return []
