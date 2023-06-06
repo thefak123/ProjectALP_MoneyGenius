@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditProfileScreen: View {
-    @StateObject var viewModel = EditProfileViewModel()
+    @StateObject var viewModel = UserViewModel()
     @State var showSheet = false
     @Binding var path : NavigationPath
     let screenWidth = UIScreen.main.bounds.size.width

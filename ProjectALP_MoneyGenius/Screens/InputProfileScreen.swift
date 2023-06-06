@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputProfileScreen: View {
-    @StateObject var viewModel = InputProfileViewModel()
+    @StateObject var viewModel = UserViewModel()
     @State private var showSheet = false
     @State var tryToNavigate : Bool = false
     var body: some View {
@@ -43,7 +43,7 @@ struct InputProfileScreen: View {
                 
                 TextInputComponent(label: "Name", placeholder: "Input Name", hideLabel: true, value: $viewModel.name)
                 Button(action: {
-                    viewModel.setInputProfile()
+                    viewModel.addUserProfile()
                     if viewModel.isSaved{
                         tryToNavigate = true
                     }

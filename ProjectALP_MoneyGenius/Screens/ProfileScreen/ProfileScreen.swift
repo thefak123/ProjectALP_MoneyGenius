@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileScreen: View {
     @State var isPresented = false
-    @StateObject var viewModel = ProfileViewModel()
+    @StateObject var viewModel = UserViewModel()
     @State var path = NavigationPath()
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
