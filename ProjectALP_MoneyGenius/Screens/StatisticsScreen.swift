@@ -62,7 +62,7 @@ struct StatisticsScreen: View {
                 }
             }.padding(20).onAppear{
                 viewModel.getSumTransactionByMonth(year:Date().year)
-                viewModel.getLatestTransaction(n: 5)
+                viewModel.getLatestTransaction(n: 2)
                 viewModel.getTotalExpenseTransaction()
                 viewModel.getTotalIncomeTranasaction()
             }

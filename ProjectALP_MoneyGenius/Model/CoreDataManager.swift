@@ -281,24 +281,58 @@ class CoreDataManager{
     
     // Budget Area
     func saveBudget(max_budget : String, initialDate : Date, endDate : Date, category_name : String, category_type : String){
-        let budget = Budget(context: viewContext)
-        budget.startDate = initialDate
-        budget.endDate = endDate
-        budget.maxBudget = Int64(max_budget)!
-        let category = Category(context: viewContext)
-        category.name = category_name
-        category.type = category_type
-        budget.category = category
+            
+            
+            
+            do{
+                let check = checkIfBudgetExist(category_name: category_name)
+                if check == nil{
+                    print("Create")
+                    let budget = Budget(context: viewContext)
+                    budget.startDate = initialDate
+                    budget.endDate = endDate
+                    budget.maxBudget = Int64(max_budget)!
+                    let category = Category(context: viewContext)
+                    category.name = category_name
+                    category.type = category_type
+                    budget.category = category
+                    try viewContext.save()
+                }else{
+                    print("Update")
+                    check!.startDate = initialDate
+                    check!.endDate = endDate
+                    check!.maxBudget = Int64(max_budget)!
+                    let category = Category(context: viewContext)
+                    category.name = category_name
+                    category.type = category_type
+                    check!.category = category
+                    try viewContext.save()
+                }
+                
+                
+                
+            }catch{
+                print("error : \(error)")
+            }
+        
+    }
+    
+    func checkIfBudgetExist(category_name : String ) -> Budget?{
+        let request : NSFetchRequest<Budget> = Budget.fetchRequest()
+        request.predicate = NSPredicate(format: "category.name == %@", category_name)
         do{
-            try viewContext.save()
+            let result = try viewContext.fetch(request)
+            
+            return result.count != 0 ? result[0] : nil
         }catch{
-            print("error : \(error)")
+            print("There is some error : \(error)")
+            return nil
         }
     }
     
     func getAllBudget() -> [Budget]{
         let request : NSFetchRequest<Budget> = Budget.fetchRequest()
-  
+        
         do{
             let result = try viewContext.fetch(request)
             print(result)
@@ -316,18 +350,19 @@ class CoreDataManager{
         // Get today's beginning & end
         var resultData : [BudgetInfoStruct] = []
         
-         
-            
-        let datePredicate = NSPredicate(format: "(%@ >= startDate) AND (%@ <= endDate)", NSDate(), NSDate())
-        request.predicate = datePredicate
         
         do{
             let result = try viewContext.fetch(request)
             for data in result {
+                
                 let value = getSumExpenseTransactionByCategoryName(category_name: data.category?.name ?? "")
                 let budgetinfo = BudgetInfoStruct(budget: data, totalAmount: value, id: UUID(), category_name: data.category?.name ?? "", max_value: Int64(data.maxBudget))
-                resultData.append(budgetinfo)
+                if data.startDate!.removeTimeStamp! <= Date().removeTimeStamp! && data.endDate!.removeTimeStamp! >= Date().removeTimeStamp!{
+                    resultData.append(budgetinfo)
+                }
             }
+            
+            print(resultData)
             return resultData
         }catch{
             print("There is some error : \(error)")

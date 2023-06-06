@@ -48,8 +48,11 @@ struct AddBudgetScreen: View {
                 }.padding(.bottom, 10)
                 
                 Button(action: {
-                    viewModel.insertNewBudget()
-                    path.removeLast()
+                    if viewModel.maxBudget != "" && viewModel.categoryName != "" {
+                        viewModel.insertNewBudget()
+                        path.removeLast()
+                    }
+                    
                 }){
                     Text("Add Budget").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)
                 }.background(Color.init(Theme.darkMainColor)).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)

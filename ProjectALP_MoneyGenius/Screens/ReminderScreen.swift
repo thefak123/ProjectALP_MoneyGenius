@@ -46,7 +46,7 @@ struct ReminderScreen: View {
         .onAppear {
             viewModel.getAllReminders()
         }
-        .preferredColorScheme(.light)
+       
     }
 
     private func binding(for reminder: ReminderStruct) -> Binding<ReminderStruct> {

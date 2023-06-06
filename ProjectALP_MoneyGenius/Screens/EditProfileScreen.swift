@@ -44,8 +44,10 @@ struct EditProfileScreen: View {
                 TextInputComponent(label: "Name", placeholder: "Input Name", hideLabel: true, value: $viewModel.name)
             }.frame(width: screenWidth / 2)
             Button(action: {
-                viewModel.setInputProfile()
-                path.removeLast()
+                if viewModel.name != "" {
+                    viewModel.setInputProfile()
+                    path.removeLast()
+                }
                 
             }){
                 Text("Set Profile").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)

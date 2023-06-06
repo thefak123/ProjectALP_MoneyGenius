@@ -38,14 +38,17 @@ struct AddTransactionScreen: View {
                     .stroke(Color(UIColor.lightGray), lineWidth: 1)
             ).frame(height: 150)
             Button(action: {
-                if trans != nil {
-                    viewModel.updateTransaction(id: trans!.id)
-
-                }else{
-                    viewModel.addTransaction()
-
+                if viewModel.amount != "" && viewModel.note != "" &&
+                    viewModel.category != nil{
+                    if trans != nil {
+                        viewModel.updateTransaction(id: trans!.id)
+                        
+                    }else{
+                        viewModel.addTransaction()
+                        
+                    }
+                    path.removeLast()
                 }
-                path.removeLast()
             }){
                 Text("\(trans != nil ? "Edit" : "Add") Transaction").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)
             }.background(Color.init(Theme.darkMainColor)).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)

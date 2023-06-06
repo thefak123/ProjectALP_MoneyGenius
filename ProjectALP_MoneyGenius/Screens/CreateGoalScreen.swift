@@ -25,15 +25,17 @@ struct CreateGoalScreen: View {
                     .stroke(Color(UIColor.lightGray), lineWidth: 1)
             ).frame(height: 150)
             Button(action: {
-                if goal != nil {
-                    viewModel.updateGoal(id: goal!.id)
-                    
-                    
-                }else{
-                    viewModel.createGoal()
-                    
+                if viewModel.note != "" && viewModel.name != "" {
+                    if goal != nil {
+                        viewModel.updateGoal(id: goal!.id)
+                        
+                        
+                    }else{
+                        viewModel.createGoal()
+                        
+                    }
+                    path.removeLast()
                 }
-                path.removeLast()
             }){
                 Text("\(goal != nil ? "Edit" : "Add") Goal").frame(width: 150 , height: 50, alignment: .center).foregroundColor(.white)
             }.background(Color.init(Theme.darkMainColor)).frame(maxWidth: .infinity, alignment: .center).padding(.top, 30)

@@ -43,9 +43,11 @@ struct InputProfileScreen: View {
                 
                 TextInputComponent(label: "Name", placeholder: "Input Name", hideLabel: true, value: $viewModel.name)
                 Button(action: {
-                    viewModel.addUserProfile()
-                    if viewModel.isSaved{
-                        tryToNavigate = true
+                    if viewModel.name != "" {
+                        viewModel.addUserProfile()
+                        if viewModel.isSaved{
+                            tryToNavigate = true
+                        }
                     }
                     
                 }){

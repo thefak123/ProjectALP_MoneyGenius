@@ -30,6 +30,7 @@ struct AddUpReminderScreen: View {
             DatePicker("Date", selection: $date, displayedComponents: [.date, .hourAndMinute])
             
             Button(action: {
+                
                 if reminder != nil {
                     updateReminder()
                 } else {
@@ -65,7 +66,9 @@ struct AddUpReminderScreen: View {
         viewModel.note = note
         viewModel.date = date
         viewModel.active = true
-        viewModel.addReminder()
+        if viewModel.name != "" && viewModel.note != ""{
+            viewModel.addReminder()
+        }
     }
 
     private func updateReminder() {
@@ -77,7 +80,11 @@ struct AddUpReminderScreen: View {
         viewModel.note = note
         viewModel.date = date
         viewModel.active = true
-        viewModel.updateReminder(id: reminder.id)
+        if viewModel.name != "" && viewModel.note != ""{
+            viewModel.updateReminder(id: reminder.id)
+            
+        }
+        
     }
     
     private func deleteReminder() {
