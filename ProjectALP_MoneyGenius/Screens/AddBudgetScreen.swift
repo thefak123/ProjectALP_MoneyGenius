@@ -31,7 +31,7 @@ struct AddBudgetScreen: View {
                         
                         
                     } label: {
-                        Text(viewModel.categoryName).foregroundColor(Color(UIColor.lightGray)).padding(10)
+                        Text(viewModel.categoryName).foregroundColor(.black).padding(10)
                         
                         
                     }.border(Color(UIColor.lightGray))

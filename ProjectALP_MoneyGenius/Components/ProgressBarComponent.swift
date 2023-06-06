@@ -17,7 +17,7 @@ struct ProgressBarComponent: View {
         HStack{
             Text("\(Int(progressValue))/\(Int(maxValue))").frame(maxWidth: .infinity, alignment: .trailing)
         }
-        ProgressView(value: progressValue, total:maxValue).scaleEffect(x: 1, y: 4, anchor: .center)
+        ProgressView(value: progressValue, total:maxValue).scaleEffect(x: 1, y: 4, anchor: .center).tint(progressValue >= maxValue ? .red : Color.init(Theme.darkMainColor))
     }
 }
 

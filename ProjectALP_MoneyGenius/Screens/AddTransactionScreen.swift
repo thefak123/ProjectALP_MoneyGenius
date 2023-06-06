@@ -29,7 +29,7 @@ struct AddTransactionScreen: View {
                 
                 
             } label: {
-                Text(viewModel.category?.name ?? "Select category").foregroundColor(Color(UIColor.lightGray)).padding(10)
+                Text(viewModel.category?.name ?? "Select category").foregroundColor(.black).padding(10)
                 
             }
             Text("Note")

@@ -81,7 +81,7 @@ struct HomeScreen: View {
         }
         .onAppear {
             viewModel.setDefaultCategories()
-        }
+        }.accentColor(Color.init(Theme.darkMainColor))
         #endif
         #endif
     }

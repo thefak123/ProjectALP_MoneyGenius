@@ -26,7 +26,7 @@ struct BudgetScreen: View {
                     
                 
                 
-            }.scrollContentBackground(.hidden).floatingActionButton(color: .blue,
+            }.scrollContentBackground(.hidden).floatingActionButton(color: Color.init(Theme.darkMainColor),
                                                                     image: Image(systemName: "plus")
                 .foregroundColor(.white)){
                     path.append("addbudget")

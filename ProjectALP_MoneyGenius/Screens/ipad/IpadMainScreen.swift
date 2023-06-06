@@ -83,7 +83,9 @@ struct IpadMainScreen: View {
                         MainScreenBlock(image:"Send", text: "Transactions", desc: "Income & Outcome").onTapGesture{
                             path.append("transactionscreen")
                         }
-                        MainScreenBlock(image:"Wallet", text: "Goals", desc: "Your Goals")
+                        MainScreenBlock(image:"Wallet", text: "Goals", desc: "Your Goals").onTapGesture {
+                            path.append("goalscreen")
+                        }
                     }
                     HStack(spacing: 32){
                         MainScreenBlock(image:"3 User", text: "Reminder", desc: "Set Your Reminder").onTapGesture {
