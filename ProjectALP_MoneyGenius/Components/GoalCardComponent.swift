@@ -12,8 +12,8 @@ struct GoalCardComponent: View {
     var body: some View {
         HStack{
             VStack(alignment: .leading){
-                Text(goal.name ?? "").fontWeight(.bold).font(.system(size:17))
-                Text(goal.note ?? "")
+                Text(goal.name ).fontWeight(.bold).font(.system(size:17))
+                Text(goal.note )
             }
             Spacer()
             Text("Rp. \(String(goal.amount))").fontWeight(.bold)

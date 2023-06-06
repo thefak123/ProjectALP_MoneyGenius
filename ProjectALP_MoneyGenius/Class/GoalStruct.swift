@@ -24,7 +24,7 @@ struct GoalStruct : Hashable{
     }
     
     var amount : Int64{
-        return goal.amount ?? 0
+        return goal.amount 
     }
     
     var isAchieved : Bool {
