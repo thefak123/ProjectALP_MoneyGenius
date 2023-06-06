@@ -15,7 +15,6 @@ class BudgetViewModel : ObservableObject{
     var maxBudget : String = ""
     var startDate : Date = Date()
     var endDate : Date = Date()
-    var amount : Int = 0
     let coreDataManager = CoreDataManager.shared
    
     
