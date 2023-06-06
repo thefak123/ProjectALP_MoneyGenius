@@ -61,7 +61,6 @@ class CoreDataManager{
             }
             
         }
-        return false
         
     }
     
@@ -262,7 +261,7 @@ class CoreDataManager{
     
     func deleteAllCategories(){
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Category")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        // let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do{
             let results = try viewContext.fetch(fetchRequest)
             for object in results {
@@ -367,7 +366,7 @@ class CoreDataManager{
     
     func deleteAllBudgets(){
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Budget")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        //let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do{
             let results = try viewContext.fetch(fetchRequest)
             for object in results {
@@ -448,7 +447,7 @@ class CoreDataManager{
     
     func removeAllTransaction(){
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Transaction")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        // let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do{
             let results = try viewContext.fetch(fetchRequest)
             for object in results {
@@ -463,7 +462,7 @@ class CoreDataManager{
     
     func getLatestTransaction(n : Int) -> [Transaction]{
         let fetchRequest : NSFetchRequest<Transaction> = Transaction.fetchRequest()
-        var transactionSort = NSSortDescriptor(key:"date", ascending:false)
+        let transactionSort = NSSortDescriptor(key:"date", ascending:false)
         fetchRequest.sortDescriptors = [transactionSort]
         if n > 0 {
             fetchRequest.fetchLimit = n
@@ -494,18 +493,15 @@ class CoreDataManager{
                         resultData[key ?? 0] = resultData[key ?? 0]!.filter{
                             $0.date?.year == year
                         }
-                        var monthName = DateFormatter().monthSymbols[key ?? 1 - 1]
-                        var totalAmount = (resultData[key ?? 1]?.reduce(0, {$0 + $1.amount}))!
+                        let monthName = DateFormatter().monthSymbols[key ?? 1 - 1]
+                        let totalAmount = (resultData[key ?? 1]?.reduce(0, {$0 + $1.amount}))!
                         
                         let chartInfo = ChartInfoStruct(id: UUID(), monthName: monthName, totalAmount: Int(totalAmount))
                         result.append(chartInfo)
                     }
                 }
                 
-            } catch {
-                print("Error fetching data: \(error)")
             }
-        print(result)
         return result
             
     }

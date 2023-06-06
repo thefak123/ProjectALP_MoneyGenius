@@ -29,7 +29,7 @@ class UserViewModel: ObservableObject {
             saveImage(imageName: imgName, image: image)
             isSaved = coreDataManager.setUserProfile(username: name, image: imgName)
         }else{
-            coreDataManager.setUserProfile(username: name, image: user?.profileImage ?? "")
+            isSaved = coreDataManager.setUserProfile(username: name, image: user?.profileImage ?? "")
             
         }
         
